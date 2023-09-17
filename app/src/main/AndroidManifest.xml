@@ -21,6 +21,7 @@
         <activity android:name=".LogInScreen" />
         <activity android:name=".NavBar" />
         <activity android:name=".MentalStateDetails" />
+        <activity android:name=".EditProfile" />
         <activity android:name=".QuizScreen" />
         <activity android:name=".Quiz1Screen" />
         <activity android:name=".Quiz2Screen" />

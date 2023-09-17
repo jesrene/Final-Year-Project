@@ -29,4 +29,3 @@ public class Quiz2Screen extends AppCompatActivity {
 
     // Add quiz-related logic here
 }
-

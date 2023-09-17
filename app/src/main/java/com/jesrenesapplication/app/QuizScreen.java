@@ -36,4 +36,3 @@ public class QuizScreen extends AppCompatActivity {
 
     // Add quiz-related logic here
 }
-
