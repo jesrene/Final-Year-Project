@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout android:id="@+id/frameMentalStateDe"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_8pxv"
+        android:layout_marginEnd="@dimen/_8pxh"
+        android:layout_marginStart="@dimen/_8pxh"
+        android:layout_marginTop="@dimen/_8pxv"
+        android:layout_width="match_parent" style="@style/groupStylegray_50">
+        <ImageView
+            android:id="@+id/imageProfilepic"
+            android:layout_width="@dimen/_70pxh"
+            android:layout_height="@dimen/_60pxh"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/_310pxh"
+            android:layout_marginTop="@dimen/_30pxv"
+            android:layout_marginEnd="@dimen/_8pxh"
+            android:src="@drawable/img_profilepic"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_profilepic" />
+        <LinearLayout android:id="@+id/linearColumnarrowleft"
+            android:layout_gravity="top|start"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30pxh"
+            android:layout_marginBottom="@dimen/_10pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txtMentalState"
+                style="@style/txtWorkSansromansemibold32"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6pxh"
+                android:layout_marginTop="@dimen/_12pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/_6pxh"
+                android:singleLine="true"
+                android:text="@{mentalStateDetailsScreenVM.mentalStateDetailsScreenModel.txtMentalState}"
+                tools:text="@string/lbl_mental_state2" />
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtStressed"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginStart="@dimen/_7pxh"
+                android:layout_marginTop="@dimen/_12pxv"
+                android:layout_width="wrap_content"
+                android:lineSpacingExtra="@dimen/_6pxh"
+                android:singleLine="true"
+                android:text="@{mentalStateDetailsScreenVM.mentalStateDetailsScreenModel.txtStressed}"
+                style="@style/txtWorkSansromansemibold32" tools:text="@string/lbl_stressed"/>
+            <LinearLayout android:id="@+id/linearMentallstatea"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylecornerRadius">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtAbout"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_6pxh"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingExtra="@dimen/_6pxh"
+                    android:singleLine="true"
+                    android:text="@{mentalStateDetailsScreenVM.mentalStateDetailsScreenModel.txtAbout}"
+                    style="@style/txtWorkSansromansemibold32" tools:text="@string/lbl_about"/>
+                <LinearLayout android:gravity="center_horizontal"
+                    android:id="@+id/linearColumndescription"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical" style="@style/groupStylewhite_1">
+                    <TextView android:gravity="center_horizontal"
+                        android:id="@+id/txtDescription"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_7pxh"
+                        android:layout_marginStart="@dimen/_7pxh"
+                        android:layout_marginTop="@dimen/_3pxv"
+                        android:layout_width="match_parent"
+                        android:lineSpacingExtra="@dimen/_3pxh"
+                        android:text="@{mentalStateDetailsScreenVM.mentalStateDetailsScreenModel.txtDescription}"
+                        style="@style/txtWorkSansromanregular15" tools:text="@string/msg_stress_is_a_nor"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearMentalstatefo"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_21pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylecornerRadius">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtForYou"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_6pxh"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingExtra="@dimen/_6pxh"
+                    android:singleLine="true"
+                    android:text="@{mentalStateDetailsScreenVM.mentalStateDetailsScreenModel.txtForYou}"
+                    style="@style/txtWorkSansromansemibold32" tools:text="@string/lbl_for_you"/>
+                <LinearLayout android:gravity="center_horizontal"
+                    android:id="@+id/linearColumndescriptionOne"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical" style="@style/groupStylewhite_1">
+
+                    <TextView
+                        android:id="@+id/txtDescriptionOne"
+                        style="@style/txtWorkSansromanregular15"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_7pxh"
+                        android:layout_marginTop="@dimen/_7pxv"
+                        android:layout_marginEnd="@dimen/_6pxh"
+                        android:layout_marginBottom="@dimen/_8pxv"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="@dimen/_3pxh"
+                        android:text="@{mentalStateDetailsScreenVM.mentalStateDetailsScreenModel.txtDescriptionOne}"
+                        tools:text="@string/msg_you_can_t_avoid" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

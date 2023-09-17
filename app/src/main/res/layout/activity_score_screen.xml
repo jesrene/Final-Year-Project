@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScoreScreen"
+    android:gravity="end"
+    android:id="@+id/linearScoreScreen"
+    android:orientation="vertical"
+    style="@style/groupStylegray_50"
+    android:background="@color/gray_50">
+
+    <ImageView
+        android:id="@+id/imageProfilepic"
+        android:layout_width="@dimen/_70pxh"
+        android:layout_height="@dimen/_60pxh"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_310pxh"
+        android:layout_marginTop="@dimen/_30pxv"
+        android:layout_marginEnd="@dimen/_8pxh"
+        android:src="@drawable/img_profilepic"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/img_profilepic" />
+
+            <TextView android:gravity="start"
+                android:id="@+id/txtCongratulationsOne"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_60pxh"
+                android:layout_marginTop="@dimen/_28pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                style="@style/txtWorkSansromansemibold32" android:text="@string/msg_congratulations"/>
+
+    <ImageView android:id="@+id/imageMedal"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="@dimen/_260pxh"
+        android:layout_marginEnd="@dimen/_10pxh"
+        android:layout_marginStart="@dimen/_10pxh"
+        android:layout_marginTop="@dimen/_20pxv"
+        android:layout_width="@dimen/_260pxh"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_medal"
+        tools:ignore="ContentDescription" tools:src="@drawable/img_medal"/>
+
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearYouhavescored"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10pxh"
+        android:layout_marginStart="@dimen/_10pxh"
+        android:layout_marginTop="@dimen/_31pxv"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylecornerRadius">
+        <TextView android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtYouhavescored"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_36pxh"
+            android:layout_marginStart="@dimen/_36pxh"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_6pxh"
+            android:singleLine="true"
+            style="@style/txtWorkSansromanmedium30"
+            android:text="@string/lbl_you_have_scored"/>
+
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtGroupTwenty"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_11pxv"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_7pxh"
+            android:paddingBottom="@dimen/_1pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_1pxv"
+            android:singleLine="true"
+            style="@style/txtSolidRoundedOutline"
+            android:text="@string/lbl_2_2"/>
+
+        <TextView android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtYouveearnedThree"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8pxh"
+            android:layout_marginStart="@dimen/_3pxh"
+            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:singleLine="true"
+            style="@style/txtWorkSansromanmedium20"
+            android:text="@string/msg_you_ve_earned_3"/>
+    </LinearLayout>
+
+
+    </LinearLayout>
+

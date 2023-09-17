@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".QuizScreen"
+android:gravity="end"
+android:id="@+id/QuizScreen"
+android:orientation="vertical"
+style="@style/groupStylegray_50"
+android:background="@color/gray_50">
+
+    <LinearLayout
+        android:id="@+id/linearColumnarrowleft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top|start"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageProfilepic"
+            android:layout_width="@dimen/_70pxh"
+            android:layout_height="@dimen/_60pxh"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/_310pxh"
+            android:layout_marginTop="@dimen/_30pxv"
+            android:layout_marginEnd="@dimen/_8pxh"
+            android:src="@drawable/img_profilepic"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_profilepic" />
+
+        <TextView
+            android:id="@+id/txtQuizTrivia2"
+            style="@style/txtWorkSansromansemibold32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/_6pxh"
+            android:singleLine="true"
+            android:text="@string/lbl_quiz_trivia" />
+
+        <TextView
+            android:id="@+id/twoslashtwo"
+            style="@style/txtWorkSansromansemibold28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/_5pxh"
+            android:singleLine="true"
+            android:text="@string/lbl_2_2" />
+
+        <TextView
+            android:id="@+id/txtIttakest"
+            style="@style/txtWorkSansromanmedium20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_23pxv"
+            android:layout_marginEnd="@dimen/_20pxh"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="@dimen/_5pxh"
+            android:text="@string/msg_which_of_the_fo" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnEnergy"
+            style="@style/btnSolidRoundedOutline_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_50pxv"
+            android:layout_marginEnd="@dimen/_17pxh"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_11pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_11pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_energy"
+            android:textAllCaps="false"
+            tools:text="@string/lbl_energy" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnProtein"
+            style="@style/btnSolidRoundedOutline_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_16pxv"
+            android:layout_marginEnd="@dimen/_17pxh"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_11pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_11pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_protein"
+            android:textAllCaps="false"
+            tools:text="@string/lbl_protein" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCarbonDioxide"
+            style="@style/btnSolidRoundedOutline_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_16pxv"
+            android:layout_marginEnd="@dimen/_17pxh"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_11pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_11pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_carbon_dioxide"
+            android:textAllCaps="false"
+            tools:text="@string/lbl_carbon_dioxide" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnVitamins"
+            style="@style/btnSolidRoundedOutline_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_16pxv"
+            android:layout_marginEnd="@dimen/_17pxh"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_11pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_11pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_vitamins"
+            android:textAllCaps="false"
+            tools:text="@string/lbl_vitamins" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDone"
+            style="@style/btnGradientRounded_1"
+            android:layout_width="@dimen/_182pxh"
+            android:layout_height="@dimen/_60pxv"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:layout_marginTop="@dimen/_68pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:singleLine="true"
+            android:text="@string/lbl_done"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScoreScreen"
+    android:gravity="end"
+    android:id="@+id/linearScoreScreen"
+    android:orientation="vertical"
+    style="@style/groupStylegray_50"
+    android:background="@color/gray_50">
+
+    <ImageView
+        android:id="@+id/imageProfilepic"
+        android:layout_width="@dimen/_70pxh"
+        android:layout_height="@dimen/_60pxh"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_310pxh"
+        android:layout_marginTop="@dimen/_30pxv"
+        android:layout_marginEnd="@dimen/_8pxh"
+        android:src="@drawable/img_profilepic"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/img_profilepic" />
+
+        <LinearLayout android:id="@+id/linearColumnarrowleft"
+            android:layout_gravity="top|start"
+            android:layout_height="@dimen/_200pxh"
+            android:layout_marginBottom="@dimen/_10pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtVoucher"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_28pxv"
+                android:layout_width="wrap_content"
+                android:lineSpacingExtra="@dimen/_6pxh"
+                android:singleLine="true"
+                style="@style/txtWorkSansromansemibold32" android:text="@string/lbl_voucher"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtVictoryPoints"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_27pxv"
+                android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_5pxh"
+                android:singleLine="true"
+                style="@style/txtWorkSansromansemibold28" android:text="@string/msg_victory_points"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtVoucherCounter"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_9pxv"
+                android:layout_width="wrap_content"
+                android:lineSpacingExtra="@dimen/_5pxh"
+                android:singleLine="true"
+                style="@style/txtWorkSansromansemibold28" android:text="@string/lbl_voucher_2"/>
+        </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgVoucher"
+        android:layout_width="396dp"
+        android:layout_height="339dp"
+        android:layout_gravity="center_horizontal"
+
+        android:src="@drawable/img_voucher"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/img_voucher" />
+
+
+
+</LinearLayout>

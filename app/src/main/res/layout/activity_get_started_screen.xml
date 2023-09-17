@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/getStatedScreen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_50">
+        <ImageView android:id="@+id/imageFleezlogo"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_162pxh"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_12pxh"
+            android:layout_marginTop="@dimen/_329pxv"
+            android:layout_width="@dimen/_388pxh"
+            android:scaleType="fitXY"
+            imageRes="@{@drawable/img_fleezlogo}"
+            tools:ignore="ContentDescription" android:src="@drawable/img_fleezlogo"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end" android:gravity="center"
+            android:id="@+id/btnGetStarted"
+            android:layout_height="@dimen/_55pxh"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_12pxh"
+            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:paddingBottom="@dimen/_12pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_12pxv" android:singleLine="true"
+            android:text="@string/lbl_get_started"
+            android:textAllCaps="false"
+            style="@style/btnGradientRounded" tools:text="@string/lbl_get_started"/>
+    </LinearLayout>
+</layout>
