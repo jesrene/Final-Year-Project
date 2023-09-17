@@ -1,22 +1,16 @@
 
-# jesrene_s_application3
+# Final Year Project
 
-Built with AndroidX Support
-
-Requires Android Studio Arctic Fox | 2020.3.1 or higher.
-
-Current Kotlin Version 1.7.20
+Built with AndroidX Support | Requires Android Studio Arctic Fox | 2020.3.1 or higher | Current Kotlin Version 1.7.20
 
 
 ### SDK Versions
 
-compileSdkVersion 33
+compileSdkVersion 33 | buildToolsVersion "30.0.3" | minSdkVersion 23 | targetSdkVersion 33
 
-buildToolsVersion "30.0.3"
 
-minSdkVersion 23
-
-targetSdkVersion 33
+### Figma Prototype 
+https://www.figma.com/proto/693ID80HNeW9KQIJfSEozK/Wireframing-for-Fleez-(Mobile-App)?node-id=1-304&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A304&mode=design&t=Ltw6C1h2CZVkKSf8-1
 
 
 ### Libraries
@@ -30,14 +24,7 @@ https://material.io/develop/android
 4. koin - Dependency Injection
 https://insert-koin.io/
 
-### Figma design guideline for better accuracy
 
-Read our guidelines to increase the accuracy of design conversion to code by optimizing Figma designs. 
-https://docs.dhiwise.com/docs/Designguidelines/intro .
-
-### App Navigation
-
-Check your app\'s UI from the AppNavigation screens of your app.
 
 ### Package Structure
 
