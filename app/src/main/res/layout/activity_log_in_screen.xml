@@ -45,7 +45,7 @@
             <EditText
                 android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
                 android:ellipsize="end"
-                android:hint="@string/lbl_yuqii_gmail_com"
+                android:hint="Enter your email here"
                 android:id="@+id/etEmailOne"
                 android:inputType="textEmailAddress"
                 android:layout_height="wrap_content"
@@ -57,8 +57,8 @@
                 android:paddingStart="@dimen/_13pxh"
                 android:paddingTop="@dimen/_15pxv"
                 android:singleLine="true"
-                android:textColorHint="@color/gray_901"
-                style="@style/etSolidRoundedOutline" />
+                android:textColorHint="@color/gray_500"
+                style="@style/txtWorkSansromanregular16" />
         </LinearLayout>
         <LinearLayout android:gravity="start"
             android:id="@+id/linearPassword"
@@ -78,7 +78,7 @@
                 style="@style/txtWorkSansromanregular18" android:text="@string/lbl_password"/>
             <EditText
                 android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
-                android:ellipsize="end" android:hint="@string/lbl"
+                android:ellipsize="end" android:hint="Enter your password here"
                 android:id="@+id/etPasswordOne"
                 android:inputType="textPassword"
                 android:layout_height="wrap_content"
@@ -90,8 +90,8 @@
                 android:paddingStart="@dimen/_13pxh"
                 android:paddingTop="@dimen/_15pxv"
                 android:singleLine="true"
-                android:textColorHint="@color/gray_901"
-                style="@style/etSolidRoundedOutline" />
+                style="@style/txtWorkSansromanregular16"
+                android:textColorHint="@color/gray_500"/>
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton

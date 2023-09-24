@@ -49,7 +49,7 @@
             <EditText
                 android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_30_radius_12"
                 android:ellipsize="end"
-                android:hint="@string/lbl_song_yu_qi"
+                android:hint="Enter your full name here"
                 android:id="@+id/etGroupSeven" android:inputType="text"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_6pxv"
@@ -60,8 +60,8 @@
                 android:paddingStart="@dimen/_13pxh"
                 android:paddingTop="@dimen/_15pxv"
                 android:singleLine="true"
-                android:textColorHint="@color/gray_901"
-                style="@style/etSolidRoundedOutline_1" />
+                style="@style/txtWorkSansromanregular16"
+                android:textColorHint="@color/gray_500" />
         </LinearLayout>
         <LinearLayout android:gravity="start"
             android:id="@+id/linearEmail"
@@ -81,7 +81,7 @@
             <EditText
                 android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
                 android:ellipsize="end"
-                android:hint="@string/lbl_yuqii_gmail_com"
+                android:hint="Enter your email here"
                 android:id="@+id/etEmailOne"
                 android:inputType="textEmailAddress"
                 android:layout_height="wrap_content"
@@ -93,8 +93,8 @@
                 android:paddingStart="@dimen/_13pxh"
                 android:paddingTop="@dimen/_15pxv"
                 android:singleLine="true"
-                android:textColorHint="@color/gray_901"
-                style="@style/etSolidRoundedOutline" />
+                style="@style/txtWorkSansromanregular16"
+                android:textColorHint="@color/gray_500" />
         </LinearLayout>
         <LinearLayout android:gravity="start"
             android:id="@+id/linearPassword"
@@ -126,8 +126,8 @@
                 android:paddingStart="@dimen/_13pxh"
                 android:paddingTop="@dimen/_15pxv"
                 android:singleLine="true"
-                android:textColorHint="@color/gray_901"
-                style="@style/etSolidRoundedOutline" />
+                android:textColorHint="@color/gray_500"
+                style="@style/txtWorkSansromanregular16"/>
         </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"

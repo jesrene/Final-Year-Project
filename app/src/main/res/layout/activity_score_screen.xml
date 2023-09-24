@@ -91,7 +91,25 @@
             style="@style/txtWorkSansromanmedium20"
             android:text="@string/msg_you_ve_earned_3"/>
 
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnViewVoucher"
+            style="@style/btnSolidRoundedOutline"
+            android:layout_width="200dp"
+            android:layout_height="65dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10pxh"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:paddingStart="@dimen/_10pxh"
+            android:paddingTop="@dimen/_10pxv"
+            android:paddingEnd="@dimen/_10pxh"
+            android:paddingBottom="@dimen/_10pxv"
+            android:singleLine="true"
+            android:text="View Vouchers"
+            android:textAllCaps="false"
+            android:textColor="@color/deep_orange_300">
+        </androidx.appcompat.widget.AppCompatButton>
     </LinearLayout>
 </RelativeLayout>
 

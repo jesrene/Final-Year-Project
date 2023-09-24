@@ -25,7 +25,7 @@ public class QuizScreen extends AppCompatActivity {
         imReady.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(QuizScreen.this, Quiz1Screen.class);
+                Intent intent = new Intent(QuizScreen.this, QuizLogic.class);
                 startActivity(intent);
             }
         });
