@@ -24,7 +24,6 @@
         <activity android:name=".EditProfile" />
         <activity android:name=".QuizScreen" />
         <activity android:name=".QuizLogic" />
-
         <activity android:name=".Quiz2Screen" />
         <activity android:name=".ScoreScreen" />
         <activity android:name=".VoucherScreen" />

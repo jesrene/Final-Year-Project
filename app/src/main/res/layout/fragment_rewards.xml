@@ -60,6 +60,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnViewVoucher"
             style="@style/btnSolidRoundedOutline"
+            android:background="@drawable/rectangle_bg_white_a700_border_black_900_30_radius_12"
             android:layout_width="250dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
@@ -80,6 +81,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPlayGame"
             style="@style/btnSolidRoundedOutline"
+            android:background="@drawable/rectangle_bg_white_a700_border_black_900_30_radius_12"
             android:layout_width="250dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"

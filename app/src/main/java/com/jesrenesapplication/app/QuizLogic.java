@@ -9,15 +9,17 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentTransaction;
 
-    public class QuizLogic extends AppCompatActivity implements View.OnClickListener {
+public class QuizLogic extends AppCompatActivity implements View.OnClickListener {
         TextView totalQuestionsTextView;
         TextView questionTextView;
         Button ansA, ansB, ansC, ansD;
         Button nextQuesBtn;
 
         int score = 0;
-        int totalQuestion = QuestionAnswer.question.length;
+        int totalQuestions = QuestionAnswer.question.length;
         int currentQuestionIndex = 0;
         String selectedAnswer = "";
 
@@ -54,7 +56,7 @@ import androidx.appcompat.app.AppCompatActivity;
                 }
             });
 
-            updateTotalQuestionsLeft(); // Update the total questions left text
+            currentQuestionNumber(); // Update the total questions left text
 
             loadNewQuestion();
         }
@@ -62,46 +64,82 @@ import androidx.appcompat.app.AppCompatActivity;
         @Override
         public void onClick(View view) {
             // Handle selecting an answer
-            Button clickedButton = (Button) view;
+
             ansA.setBackgroundColor(Color.WHITE);
             ansB.setBackgroundColor(Color.WHITE);
             ansC.setBackgroundColor(Color.WHITE);
             ansD.setBackgroundColor(Color.WHITE);
 
+            Button clickedButton = (Button) view;
             selectedAnswer = clickedButton.getText().toString();
-            clickedButton.setBackgroundColor(Color.BLUE);
+            int greyColor = ContextCompat.getColor(this, R.color.gray_300);
+            clickedButton.setBackgroundColor(greyColor);
         }
 
-        void updateTotalQuestionsLeft() {
-            int questionsLeft = totalQuestion - currentQuestionIndex;
-            totalQuestionsTextView.setText("Total Questions Left: " + questionsLeft);
+        void currentQuestionNumber() {
+            int currentQuestionNumber = currentQuestionIndex + 1; // Adding 1 to convert index to number
+            totalQuestionsTextView.setText(currentQuestionNumber + "/3");
         }
+
 
         void loadNewQuestion() {
-            if (currentQuestionIndex == totalQuestion) {
+            if (currentQuestionIndex == totalQuestions) {
                 finishQuiz();
                 return;
             }
+
+            // Reset the background color of all answer buttons to white
+            ansA.setBackgroundColor(Color.WHITE);
+            ansB.setBackgroundColor(Color.WHITE);
+            ansC.setBackgroundColor(Color.WHITE);
+            ansD.setBackgroundColor(Color.WHITE);
 
             questionTextView.setText(QuestionAnswer.question[currentQuestionIndex]);
             ansA.setText(QuestionAnswer.choices[currentQuestionIndex][0]);
             ansB.setText(QuestionAnswer.choices[currentQuestionIndex][1]);
             ansC.setText(QuestionAnswer.choices[currentQuestionIndex][2]);
             ansD.setText(QuestionAnswer.choices[currentQuestionIndex][3]);
+
+            currentQuestionNumber();
+
         }
 
-        void finishQuiz() {
-            String passStatus = "YAY";
+    void finishQuiz() {
+        String passStatus = "Score";
+        String message;
 
-            new AlertDialog.Builder(this)
-                    .setTitle(passStatus)
-                    .setMessage("Score is " + score + " out of " + totalQuestion)
-                    .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
-                    .setCancelable(false)
-                    .show();
+        if (score == totalQuestions) {
+            // If the score is 3 out of 3, reward a voucher
+            message = "Score is " + score + " out of " + totalQuestions + ". You have been rewarded a voucher!";
+        } else {
+            // If the score is not perfect, display the regular score message
+            message = "Score is " + score + " out of " + totalQuestions;
         }
 
-        void restartQuiz() {
+        new AlertDialog.Builder(this)
+                .setTitle(passStatus)
+                .setMessage(message)
+                .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
+                .setNegativeButton("Back to Home", (dialogInterface, i) -> backToHome()) // TODO
+                .setCancelable(false)
+                .show();
+    }
+
+        //TODO
+        void backToHome() {
+            // Create an intent to go back to the home screen (or specific fragment)
+            Intent intent = new Intent(this, RewardsFragment.class); // Replace with your home activity or target activity
+            intent.putExtra("navigate_to_fragment", "home_fragment"); // Include an identifier for the target fragment
+
+            // Start the intent
+            startActivity(intent);
+
+            // Close the current quiz activity
+            finish();
+        }
+
+
+    void restartQuiz() {
             score = 0;
             currentQuestionIndex = 0;
             loadNewQuestion();
