@@ -78,7 +78,7 @@ public class QuizLogic extends AppCompatActivity implements View.OnClickListener
 
         void currentQuestionNumber() {
             int currentQuestionNumber = currentQuestionIndex + 1; // Adding 1 to convert index to number
-            totalQuestionsTextView.setText(currentQuestionNumber + "/3");
+            totalQuestionsTextView.setText(currentQuestionNumber + "/10");
         }
 
 

@@ -112,5 +112,15 @@
             android:text="@string/lbl_log_in"
             android:textAllCaps="false"
             style="@style/btnGradientRounded_1" />
+
+        <TextView
+            android:id="@+id/errorTextView"
+            android:layout_width="@dimen/_30pxh"
+            android:layout_height="@dimen/_30pxh"
+
+            android:text="ERROR LOGGING IN"
+            android:textColor="#FF0000"
+            android:visibility="gone" />
+
     </LinearLayout>
 </layout>
