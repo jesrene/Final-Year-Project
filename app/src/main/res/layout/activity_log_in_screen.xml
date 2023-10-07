@@ -35,7 +35,7 @@
             android:layout_marginTop="@dimen/_60pxv"
             android:layout_width="match_parent"
             android:orientation="vertical" style="@style/groupStylecornerRadius">
-            <TextView android:ellipsize="end" android:id="@+id/txtEmail"
+            <TextView android:ellipsize="end" android:id="@+id/emailtxt"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_10pxh"
                 android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
                 android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
                 android:ellipsize="end"
                 android:hint="Enter your email here"
-                android:id="@+id/etEmailOne"
+                android:id="@+id/editEmail"
                 android:inputType="textEmailAddress"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3pxv"
@@ -79,7 +79,7 @@
             <EditText
                 android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
                 android:ellipsize="end" android:hint="Enter your password here"
-                android:id="@+id/etPasswordOne"
+                android:id="@+id/editPassword"
                 android:inputType="textPassword"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3pxv"
@@ -96,7 +96,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"
-            android:id="@+id/btnLogInButton" android:layout_gravity="end"
+            android:id="@+id/btnLogIn" android:layout_gravity="end"
             android:layout_height="@dimen/_60pxv"
             android:layout_marginBottom="@dimen/_5pxv"
             android:layout_marginEnd="@dimen/_20pxh"
@@ -113,14 +113,11 @@
             android:textAllCaps="false"
             style="@style/btnGradientRounded_1" />
 
-        <TextView
-            android:id="@+id/errorTextView"
-            android:layout_width="@dimen/_30pxh"
-            android:layout_height="@dimen/_30pxh"
-
-            android:text="ERROR LOGGING IN"
-            android:textColor="#FF0000"
-            android:visibility="gone" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </layout>

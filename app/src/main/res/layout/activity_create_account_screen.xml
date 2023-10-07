@@ -130,6 +130,13 @@
                 android:textColorHint="@color/gray_500"
                 style="@style/txtWorkSansromanregular16"/>
         </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"
             android:id="@+id/btnSignUp" android:layout_gravity="end"

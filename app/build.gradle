@@ -4,11 +4,14 @@ plugins {
     id 'kotlin-kapt'
 }
 
+def kotlin_version = "1.5.21" // Use the appropriate version
+
 def koin_version = "2.1.6"
 def lifecycleVersion = "2.2.0"
 def retrofitVersion = '2.9.0'
 def okhttpVersion = '4.9.0'
 def glideVersion = '4.11.0'
+
 
 
 android {
@@ -46,7 +49,7 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.5.21'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"

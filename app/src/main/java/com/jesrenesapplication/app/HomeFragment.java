@@ -23,7 +23,6 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-
         // Find the btnPlayGame button by its ID within the fragment_rewards.xml layout
         mentalState = view.findViewById(R.id.linearMentalstate);
 

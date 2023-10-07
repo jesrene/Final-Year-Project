@@ -23,9 +23,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginTop="@dimen/_12pxv"
+                android:layout_marginTop="@dimen/_35pxv"
                 android:layout_marginEnd="@dimen/_10pxh"
-                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginStart="@dimen/_25pxh"
                 android:ellipsize="end"
                 android:lineSpacingExtra="@dimen/_5pxh"
                 android:singleLine="true"
@@ -108,8 +108,8 @@
 
                 <TextView
                     android:id="@+id/txtSongYuQi"
-                    style="@style/txtWorkSansromanmedium22"
-                    android:layout_width="129dp"
+                    style="@style/txtWorkSansromanregular20"
+                    android:layout_width="106dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_165pxh"
                     android:layout_marginTop="@dimen/_5pxv"
@@ -122,25 +122,27 @@
                     android:text="@string/lbl_song_yu_qi" />
             </LinearLayout>
 
-            <LinearLayout
+
+            <RelativeLayout
                 android:id="@+id/linearEmail"
                 style="@style/groupStylewhite_A700cornerRadius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16pxv"
                 android:layout_marginStart="@dimen/_20pxh"
                 android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_16pxv"
                 android:gravity="start"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/txtEMAIL"
                     style="@style/txtWorkSansromanregular18"
-                    android:layout_width="0dp"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_13pxh"
-                    android:layout_marginTop="@dimen/_5pxv"
-                    android:layout_weight="0.23"
+                    android:layout_marginStart="@dimen/_15pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_weight="0.5"
                     android:ellipsize="end"
                     android:lineSpacingExtra="@dimen/_4pxh"
                     android:singleLine="true"
@@ -148,19 +150,20 @@
 
                 <TextView
                     android:id="@+id/txtEmailOne"
-                    style="@style/txtWorkSansromanmedium22"
-                    android:layout_width="0dp"
+                    style="@style/txtWorkSansromanregular20"
+                    android:layout_width="166dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_91pxh"
+                    android:layout_marginStart="100dp"
                     android:layout_marginTop="@dimen/_5pxv"
                     android:layout_marginEnd="@dimen/_29pxh"
                     android:layout_marginBottom="@dimen/_5pxv"
-                    android:layout_weight="0.77"
+                    android:layout_toEndOf="@+id/txtEMAIL"
+                    android:layout_weight="0"
                     android:ellipsize="end"
                     android:lineSpacingExtra="@dimen/_4pxh"
                     android:singleLine="true"
                     android:text="@string/lbl_yukii_gmail_com" />
-            </LinearLayout>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/linearPassword"
@@ -188,12 +191,11 @@
 
                 <TextView
                     android:id="@+id/txtFour"
-                    style="@style/txtWorkSansromanmedium22"
-                    android:layout_width="101dp"
+                    style="@style/txtWorkSansromanregular20"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="126dp"
-                    android:layout_marginTop="@dimen/_5pxv"
-                    android:layout_marginEnd="@dimen/_29pxh"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="@dimen/_10pxv"
                     android:layout_marginBottom="@dimen/_5pxv"
                     android:layout_toEndOf="@id/txtPASSWORD"
                     android:layout_weight="0.5"
@@ -208,14 +210,15 @@
             android:layout_height="@dimen/_300pxh"
             android:orientation="vertical"
             android:layout_marginTop="@dimen/_20pxh">
+
             <TextView
                 android:id="@+id/txtPersonalData"
-                style="@style/txtWorkSansromanmedium18"
+                style="@style/txtWorkSansromanmedium22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginTop="@dimen/_31pxv"
                 android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_31pxv"
                 android:layout_marginEnd="@dimen/_20pxh"
                 android:ellipsize="end"
                 android:lineSpacingExtra="@dimen/_4pxh"
@@ -248,7 +251,7 @@
 
                 <TextView
                     android:id="@+id/txtGenderOne"
-                    style="@style/txtWorkSansromanmedium22"
+                    style="@style/txtWorkSansromanregular20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_170pxh"
@@ -262,7 +265,7 @@
                     android:text="@string/lbl_female" />
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/linearDob"
                 style="@style/groupStylewhite_A700cornerRadius"
                 android:layout_width="match_parent"
@@ -275,7 +278,7 @@
                 <TextView
                     android:id="@+id/txtDATEOFBIRTH"
                     style="@style/txtWorkSansromanregular18"
-                    android:layout_width="30dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_11pxh"
                     android:layout_marginTop="@dimen/_5pxv"
@@ -288,19 +291,22 @@
 
                 <TextView
                     android:id="@+id/txtJun101996"
-                    style="@style/txtWorkSansromanmedium22"
-                    android:layout_width="20dp"
+                    style="@style/txtWorkSansromanregular20"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_46pxh"
+                    android:layout_marginStart="@dimen/_66pxh"
                     android:layout_marginTop="@dimen/_5pxv"
                     android:layout_marginEnd="@dimen/_29pxh"
                     android:layout_marginBottom="@dimen/_5pxv"
+                    android:layout_toEndOf="@+id/txtDATEOFBIRTH"
                     android:layout_weight="0.5"
                     android:ellipsize="end"
                     android:lineSpacingExtra="@dimen/_4pxh"
                     android:singleLine="true"
                     android:text="@string/lbl_jun_10_1996" />
-            </LinearLayout>
+
+            </RelativeLayout>
+
 
             <LinearLayout
                 android:id="@+id/linearHeight"
@@ -328,7 +334,7 @@
 
                 <TextView
                     android:id="@+id/txtDistance"
-                    style="@style/txtWorkSansromanmedium22"
+                    style="@style/txtWorkSansromanregular20"
                     android:layout_width="2dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_186pxh"
@@ -368,7 +374,7 @@
 
                 <TextView
                     android:id="@+id/txtWeightOne"
-                    style="@style/txtWorkSansromanmedium22"
+                    style="@style/txtWorkSansromanregular20"
                     android:layout_width="2dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_200pxh"
