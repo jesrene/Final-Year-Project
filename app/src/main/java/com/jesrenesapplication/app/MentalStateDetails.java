@@ -21,12 +21,9 @@ public class MentalStateDetails extends AppCompatActivity {
         backToSummary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Handle the click event here
-                // For example, you can show a toast message
                 Intent intent = new Intent(MentalStateDetails.this, NavBar.class);
                 startActivity(intent);
 
-                // Add your custom logic here, such as navigating to a different screen
             }
         });
     }

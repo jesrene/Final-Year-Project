@@ -17,8 +17,9 @@
 <color name="black_900">#000000</color>
 <color name="bluegray_100_77">#77cbcbcb</color>
 <color name="blue_50_b2">#b2deebff</color>
-<color name="indigo_100_b2">#b2b9c4ff</color>
+<color name="indigo_100_b2">#B2FF9625</color>
 <color name="deep_orange_300">#ff8850</color>
+<color name="deep_orange_200">#FFF0B8</color>
 <color name="deep_orange_500">#fe662b</color>
 <color name="red_A700">#ff0404</color>
 <color name="gray_700">#636469</color>

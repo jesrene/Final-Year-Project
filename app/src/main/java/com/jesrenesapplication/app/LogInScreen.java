@@ -33,13 +33,12 @@ public class LogInScreen extends AppCompatActivity {
         return null; // User not found
     }
 
-    // This is just a placeholder method; you should replace it with your actual data source retrieval logic
     private List<User> getUsersFromSomeSource() {
         // Example: You can return a list of users stored statically for testing purposes
         List<User> userList = new ArrayList<>();
         // Add user objects to the list
-        userList.add(new User("user1@example.com", "1"));
-        userList.add(new User("user2@example.com", "2"));
+        userList.add(new User("u", "q"));
+        userList.add(new User("u", "w"));
         userList.add(new User("user3@example.com", "3"));
         return userList;
     }

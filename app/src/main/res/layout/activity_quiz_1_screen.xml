@@ -45,6 +45,7 @@
         <TextView
             android:id="@+id/total_question"
             style="@style/txtWorkSansromansemibold28"
+            android:textColor="@color/gray_700"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -62,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20pxh"
-            android:layout_marginTop="@dimen/_30pxv"
+            android:layout_marginTop="@dimen/_40pxv"
             android:layout_marginEnd="@dimen/_20pxh"
             android:gravity="center_horizontal"
             android:lineSpacingExtra="@dimen/_5pxh"
@@ -70,8 +71,9 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ansA"
-            style="@style/btnSolidRoundedOutline_1"
             android:background="@drawable/rectangle_bg_white_a700_border_black_900_23_radius_12"
+            style="@style/txtWorkSansromanmedium18"
+            android:textColor="@color/gray_901"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_17pxh"
@@ -91,7 +93,8 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ansB"
             android:background="@drawable/rectangle_bg_white_a700_border_black_900_23_radius_12"
-            style="@style/btnSolidRoundedOutline_1"
+            style="@style/txtWorkSansromanmedium18"
+            android:textColor="@color/gray_901"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_17pxh"
@@ -110,8 +113,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ansC"
-            style="@style/btnSolidRoundedOutline_1"
-            android:background="@drawable/rectangle_bg_white_a700_border_black_900_23_radius_12"
+            style="@style/txtWorkSansromanmedium18"
+            android:textColor="@color/gray_901"            android:background="@drawable/rectangle_bg_white_a700_border_black_900_23_radius_12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_17pxh"
@@ -130,8 +133,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ansD"
-            style="@style/btnSolidRoundedOutline_1"
-            android:background="@drawable/rectangle_bg_white_a700_border_black_900_23_radius_12"
+            style="@style/txtWorkSansromanmedium18"
+            android:textColor="@color/gray_901"            android:background="@drawable/rectangle_bg_white_a700_border_black_900_23_radius_12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_17pxh"

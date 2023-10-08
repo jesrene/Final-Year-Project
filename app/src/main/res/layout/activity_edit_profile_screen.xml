@@ -6,14 +6,14 @@
         android:id="@+id/linearEditProfileSc"
         style="@style/groupStylegray_50"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/backToProfile"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_35pxh"
+            android:layout_height="70dp"
             android:layout_weight="1.0"
             android:orientation="horizontal">
 
@@ -26,12 +26,12 @@
 
             <TextView
                 android:id="@+id/profile"
+                style="@style/txtWorkSansromanmedium22"
                 android:layout_width="74dp"
                 android:layout_height="@dimen/_18pxh"
                 android:layout_marginStart="@dimen/_6pxh"
                 android:layout_marginTop="@dimen/_18pxh"
                 android:text="Profile"
-                style="@style/txtWorkSansromanmedium22"
                 android:textSize="@dimen/_12pxh" />
         </LinearLayout>
 
@@ -39,7 +39,7 @@
             android:id="@+id/ll1"
             style="@style/groupStylegray_50"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1.0"
             android:orientation="vertical"
             >
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginTop="@dimen/_4pxv"
+                android:layout_marginTop="@dimen/_20pxv"
                 android:layout_marginEnd="@dimen/_10pxh"
                 android:layout_marginStart="@dimen/_25pxh"
                 android:ellipsize="end"
@@ -60,28 +60,25 @@
 
             <FrameLayout
                 android:id="@+id/frameUploadphoto"
-                android:layout_width="@dimen/_170pxh"
-                android:layout_height="@dimen/_185pxv"
+                android:layout_width="@dimen/_160pxh"
+                android:layout_height="@dimen/_160pxv"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginStart="@dimen/_108pxh"
-                android:layout_marginTop="@dimen/_2pxv"
-                android:layout_marginEnd="@dimen/_108pxh">
+                android:layout_marginTop="@dimen/_20pxh"
+                android:layout_marginBottom="@dimen/_20pxh"
+                >
 
                 <View
                     android:id="@+id/viewUploadeclipse"
-                    android:layout_width="@dimen/_160pxh"
-                    android:layout_height="@dimen/_151pxh"
-                    android:layout_gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@drawable/rectangle_bg_bluegray_100_radius_77_42" />
 
                 <LinearLayout
                     android:id="@+id/linearColumnuploadphotoic"
-                    android:layout_width="116dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:layout_marginStart="@dimen/_32pxh"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_24pxv"
-                    android:layout_marginEnd="@dimen/_32pxh"
                     android:layout_marginBottom="@dimen/_24pxv"
                     android:orientation="vertical">
 
@@ -92,18 +89,15 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="@dimen/_20pxh"
                         android:layout_marginEnd="@dimen/_20pxh"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_uploadphotoic"
-
-                        />
+                        android:src="@drawable/img_uploadphotoic" />
 
                     <TextView
                         android:id="@+id/txtUploadyourpho"
                         style="@style/txtWorkSansromanregular16"
-                        android:layout_width="match_parent"
-                        android:layout_height="43dp"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12pxv"
-                        android:lineSpacingExtra="@dimen/_2pxh"
                         android:textSize="@dimen/_12pxh"
                         android:text="@string/msg_upload_your_ph" />
                 </LinearLayout>
@@ -136,11 +130,11 @@
                 <TextView
                     android:id="@+id/txtSongYuQi"
                     style="@style/txtWorkSansromanregular20"
-                    android:layout_width="106dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_165pxh"
+                    android:layout_marginStart="@dimen/_185pxh"
                     android:layout_marginTop="@dimen/_5pxv"
-                    android:layout_marginEnd="@dimen/_29pxh"
+                    android:layout_marginEnd="@dimen/_5pxh"
                     android:layout_marginBottom="@dimen/_5pxv"
                     android:layout_weight="0"
                     android:ellipsize="end"
@@ -178,9 +172,9 @@
                 <TextView
                     android:id="@+id/txtEmailOne"
                     style="@style/txtWorkSansromanregular20"
-                    android:layout_width="180dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
+                    android:layout_marginStart="110dp"
                     android:layout_marginTop="@dimen/_5pxv"
                     android:layout_marginEnd="@dimen/_5pxh"
                     android:layout_marginBottom="@dimen/_5pxv"
@@ -205,7 +199,7 @@
                 <TextView
                     android:id="@+id/txtPASSWORD"
                     style="@style/txtWorkSansromanregular18"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_15pxh"
                     android:layout_marginTop="@dimen/_10pxv"
@@ -219,13 +213,13 @@
                 <TextView
                     android:id="@+id/txtFour"
                     style="@style/txtWorkSansromanregular20"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="150dp"
+                    android:layout_marginStart="160dp"
                     android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_5pxh"
                     android:layout_marginBottom="@dimen/_5pxv"
                     android:layout_toEndOf="@id/txtPASSWORD"
-                    android:layout_weight="0.5"
                     android:ellipsize="end"
                     android:lineSpacingExtra="@dimen/_4pxh"
                     android:singleLine="true"
@@ -234,7 +228,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="312dp"
+                android:layout_height="320dp"
                 android:layout_marginTop="@dimen/_20pxh"
                 android:orientation="vertical">
 
@@ -265,12 +259,11 @@
                     <TextView
                         android:id="@+id/txtGENDER"
                         style="@style/txtWorkSansromanregular18"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_11pxh"
                         android:layout_marginTop="@dimen/_5pxv"
                         android:layout_marginBottom="@dimen/_5pxv"
-                        android:layout_weight="0.49"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_4pxh"
                         android:singleLine="true"
@@ -279,13 +272,12 @@
                     <TextView
                         android:id="@+id/txtGenderOne"
                         style="@style/txtWorkSansromanregular20"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_170pxh"
+                        android:layout_marginStart="@dimen/_196pxh"
                         android:layout_marginTop="@dimen/_5pxv"
-                        android:layout_marginEnd="@dimen/_29pxh"
+                        android:layout_marginEnd="@dimen/_10pxh"
                         android:layout_marginBottom="@dimen/_5pxv"
-                        android:layout_weight="0.51"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_4pxh"
                         android:singleLine="true"
@@ -319,14 +311,13 @@
                     <TextView
                         android:id="@+id/txtJun101996"
                         style="@style/txtWorkSansromanregular20"
-                        android:layout_width="@dimen/_150pxh"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_66pxh"
+                        android:layout_marginStart="@dimen/_80pxh"
                         android:layout_marginTop="@dimen/_5pxv"
                         android:layout_marginEnd="@dimen/_5pxh"
                         android:layout_marginBottom="@dimen/_5pxv"
                         android:layout_toEndOf="@+id/txtDATEOFBIRTH"
-                        android:layout_weight="0.5"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_4pxh"
                         android:singleLine="true"
@@ -348,12 +339,11 @@
                     <TextView
                         android:id="@+id/txtHEIGHT"
                         style="@style/txtWorkSansromanregular18"
-                        android:layout_width="5dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_11pxh"
                         android:layout_marginTop="@dimen/_5pxv"
                         android:layout_marginBottom="@dimen/_5pxv"
-                        android:layout_weight="0.46"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_4pxh"
                         android:singleLine="true"
@@ -362,13 +352,12 @@
                     <TextView
                         android:id="@+id/txtDistance"
                         style="@style/txtWorkSansromanregular20"
-                        android:layout_width="2dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_186pxh"
+                        android:layout_marginStart="@dimen/_210pxh"
                         android:layout_marginTop="@dimen/_6pxv"
-                        android:layout_marginEnd="@dimen/_29pxh"
+                        android:layout_marginEnd="@dimen/_5pxh"
                         android:layout_marginBottom="@dimen/_9pxv"
-                        android:layout_weight="0.54"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_4pxh"
                         android:singleLine="true"
@@ -388,12 +377,11 @@
                     <TextView
                         android:id="@+id/txtWEIGHT"
                         style="@style/txtWorkSansromanregular18"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_11pxh"
                         android:layout_marginTop="@dimen/_5pxv"
                         android:layout_marginBottom="@dimen/_5pxv"
-                        android:layout_weight="0.55"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_4pxh"
                         android:singleLine="true"
@@ -402,13 +390,12 @@
                     <TextView
                         android:id="@+id/txtWeightOne"
                         style="@style/txtWorkSansromanregular20"
-                        android:layout_width="2dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_200pxh"
+                        android:layout_marginStart="@dimen/_220pxh"
                         android:layout_marginTop="@dimen/_5pxv"
-                        android:layout_marginEnd="@dimen/_29pxh"
+                        android:layout_marginEnd="@dimen/_5pxh"
                         android:layout_marginBottom="@dimen/_5pxv"
-                        android:layout_weight="0.45"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_4pxh"
                         android:singleLine="true"

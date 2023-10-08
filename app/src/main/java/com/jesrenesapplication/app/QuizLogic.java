@@ -72,7 +72,7 @@ public class QuizLogic extends AppCompatActivity implements View.OnClickListener
 
             Button clickedButton = (Button) view;
             selectedAnswer = clickedButton.getText().toString();
-            int greyColor = ContextCompat.getColor(this, R.color.gray_300);
+            int greyColor = ContextCompat.getColor(this, R.color.deep_orange_200);
             clickedButton.setBackgroundColor(greyColor);
         }
 
@@ -119,16 +119,15 @@ public class QuizLogic extends AppCompatActivity implements View.OnClickListener
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
                 .setMessage(message)
-                .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Back to Home", (dialogInterface, i) -> backToHome()) // TODO
+                .setPositiveButton("Replay", (dialogInterface, i) -> restartQuiz())
+                .setNegativeButton("Back to Home", (dialogInterface, i) -> backToHome())
                 .setCancelable(false)
                 .show();
     }
 
-        //TODO
         void backToHome() {
             // Create an intent to go back to the home screen (or specific fragment)
-            Intent intent = new Intent(this, RewardsFragment.class); // Replace with your home activity or target activity
+            Intent intent = new Intent(this, NavBar.class); // Replace with your home activity or target activity
             intent.putExtra("navigate_to_fragment", "home_fragment"); // Include an identifier for the target fragment
 
             // Start the intent
@@ -137,7 +136,6 @@ public class QuizLogic extends AppCompatActivity implements View.OnClickListener
             // Close the current quiz activity
             finish();
         }
-
 
     void restartQuiz() {
             score = 0;
