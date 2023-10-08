@@ -22,7 +22,6 @@
         <activity android:name=".CreateAccountScreen" />
         <activity android:name=".LogInScreen" />
         <activity android:name=".NavBar" />
-        <activity android:name=".HomeFragment" />
         <activity android:name=".MentalStateDetails" />
         <activity android:name=".EditProfile" />
         <activity android:name=".QuizScreen" />

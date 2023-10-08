@@ -1,6 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/white_A700"/>
-    <corners android:radius="@dimen/_12pxh"/>
-    <stroke android:color="@color/black_900_30" android:width="@dimen/_1pxh"/>
-</shape>
+<!-- res/drawable/shadow_shape.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white_A700" /> <!-- Set the background color for the shadow -->
+            <corners android:radius="@dimen/_12pxh" />
+        </shape>
+    </item>
+    <!-- Shape layer -->
+    <item android:right="1dp" android:left="1dp" android:top="1dp" android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white_A700" /> <!-- Set the background color for the shape -->
+            <corners android:radius="@dimen/_12pxh" />
+            <stroke android:color="@color/black_900_30" android:width="@dimen/_1pxh" />
+        </shape>
+    </item>
+</layer-list>

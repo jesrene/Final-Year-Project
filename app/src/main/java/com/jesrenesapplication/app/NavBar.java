@@ -11,10 +11,24 @@ import com.google.android.material.navigation.NavigationBarView;
 public class NavBar extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-
     HomeFragment homeFragment = new HomeFragment();
     RewardsFragment rewardsFragment = new RewardsFragment();
     ProfileFragment profileFragment = new ProfileFragment();
+
+//    private static NavBar instance;
+//
+//    // Private constructor to prevent direct instantiation
+//
+//
+//    // Get the shared instance of NavBar
+//    public static NavBar getInstance() {
+//        if (instance == null) {
+//            instance = new NavBar();
+//        }
+//        return instance;
+//    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,4 +58,5 @@ public class NavBar extends AppCompatActivity {
         });
 
     }
+
 }

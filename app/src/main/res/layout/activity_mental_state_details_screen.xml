@@ -9,6 +9,33 @@
     style="@style/groupStylegray_50"
     android:background="@color/gray_50">
 
+    <LinearLayout
+        android:id="@+id/backToSummary"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35pxh"
+        android:layout_weight="1.0"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:onClick="onBackToSummaryClick">
+
+        <ImageView
+            android:layout_width="@dimen/_10pxh"
+            android:layout_height="@dimen/_10pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_22pxh"
+            android:src="@drawable/img_arrowleft" />
+
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="74dp"
+            android:layout_height="@dimen/_18pxh"
+            android:layout_marginStart="@dimen/_6pxh"
+            android:layout_marginTop="@dimen/_18pxh"
+            android:text="Summary"
+            style="@style/txtWorkSansromanmedium22"
+            android:textSize="@dimen/_12pxh" />
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/imageProfilepic"
         android:layout_width="@dimen/_70pxh"
@@ -26,14 +53,14 @@
         android:layout_width="match_parent"
         android:layout_height="791dp"
         android:layout_gravity="top|start"
-        android:layout_marginTop="@dimen/_30pxh"
+        android:layout_marginTop="@dimen/_50pxh"
         android:layout_marginBottom="@dimen/_10pxv"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtMentalState"
-            style="@style/txtWorkSansromansemibold32"
-            android:layout_width="247dp"
+            style="@style/txtWorkSansromanregular20"
+            android:textColor="@color/gray_500"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20pxh"
             android:layout_marginTop="@dimen/_12pxv"
@@ -44,12 +71,11 @@
             android:text="@string/lbl_mental_state2" />
 
         <TextView
-            android:id="@+id/txtStressed"
-            style="@style/txtWorkSansromansemibold32"
+            android:id="@+id/txtMentalState"
+            style="@style/txtWorkSansromansemibold28"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20pxh"
-            android:layout_marginTop="@dimen/_12pxv"
             android:layout_marginEnd="@dimen/_10pxh"
             android:ellipsize="end"
             android:lineSpacingExtra="@dimen/_6pxh"

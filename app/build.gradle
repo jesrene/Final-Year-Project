@@ -59,13 +59,10 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.5.5"
 
     implementation 'com.google.android.material:material:1.7.0'
-
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-core-ext:$koin_version"
     implementation "io.insert-koin:koin-androidx-scope:$koin_version"
     implementation "io.insert-koin:koin-androidx-viewmodel:$koin_version"
-
-
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
