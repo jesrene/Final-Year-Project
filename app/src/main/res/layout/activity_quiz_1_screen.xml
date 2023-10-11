@@ -11,6 +11,33 @@
     android:background="@color/gray_50">
 
     <LinearLayout
+        android:id="@+id/backToInformationSnippet"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_weight="1.0"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_10pxh"
+            android:layout_height="@dimen/_10pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_22pxh"
+            android:src="@drawable/img_arrowleft" />
+
+        <TextView
+            android:id="@+id/informationSnippet"
+            style="@style/txtWorkSansromanmedium22"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_18pxh"
+            android:layout_marginStart="@dimen/_6pxh"
+            android:layout_marginTop="@dimen/_18pxh"
+            android:text="Information Snippet"
+            android:textSize="@dimen/_12pxh" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
         android:id="@+id/linearColumnarrowleft"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

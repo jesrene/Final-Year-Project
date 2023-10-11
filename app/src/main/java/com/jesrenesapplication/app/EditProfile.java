@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -14,12 +16,15 @@ import com.jesrenesapplication.app.R;
 
 public class EditProfile extends AppCompatActivity {
 
+    ProfileFragment profileFragment = new ProfileFragment();
+
+
     private static final int REQUEST_CODE_SELECT_IMAGE = 1001; // Define a request code
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile_screen);
+        setContentView(R.layout.fragment_edit_profile);
 
         FrameLayout frameUploadphoto = findViewById(R.id.frameUploadphoto);
 
@@ -32,9 +37,21 @@ public class EditProfile extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE_SELECT_IMAGE);
             }
         });
+
+        LinearLayout backButton = findViewById(R.id.backToProfile); // Initialize backButton here
+
+        // Set an OnClickListener to handle button clicks
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
+                // Finish the current activity to go back
+            }
+        });
     }
 
-    // Handle the result when an image is selected from the gallery
+
+// Handle the result when an image is selected from the gallery
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

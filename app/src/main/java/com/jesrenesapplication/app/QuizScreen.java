@@ -1,18 +1,22 @@
 package com.jesrenesapplication.app;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity; // Make sure to import AppCompatActivity
+import androidx.fragment.app.FragmentManager;
 
 
 public class QuizScreen extends AppCompatActivity {
 
     Button imReady;
+    Button backButton;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,17 @@ public class QuizScreen extends AppCompatActivity {
             }
         });
 
+//// Find the backToRewards LinearLayout by its ID within the XML layout
+//        backButton = findViewById(R.id.backToRewards);
+//
+//// Set an OnClickListener to handle button clicks
+//        backButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(QuizScreen.this, NavBar.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
     }

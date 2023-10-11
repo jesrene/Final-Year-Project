@@ -56,7 +56,6 @@
             android:scaleType="fitXY"
             android:src="@drawable/img_trophy"
             tools:ignore="ContentDescription" />
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnViewVoucher"
             style="@style/btnSolidRoundedOutline"
@@ -103,9 +102,6 @@
 
 
 </RelativeLayout>
-
-
-
 
 
 

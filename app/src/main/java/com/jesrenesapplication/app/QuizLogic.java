@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -18,10 +19,13 @@ public class QuizLogic extends AppCompatActivity implements View.OnClickListener
         Button ansA, ansB, ansC, ansD;
         Button nextQuesBtn;
 
+
+
         int score = 0;
         int totalQuestions = QuestionAnswer.question.length;
         int currentQuestionIndex = 0;
         String selectedAnswer = "";
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,16 @@ public class QuizLogic extends AppCompatActivity implements View.OnClickListener
             ansC = findViewById(R.id.ansC);
             ansD = findViewById(R.id.ansD);
             nextQuesBtn = findViewById(R.id.submit_btn);
+
+            // Initialize and set click listener for the back button
+            LinearLayout backButton = findViewById(R.id.backToInformationSnippet);
+            backButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Handle back button click here, e.g., go back to the previous activity
+                    finish(); // Finish the current activity to go back
+                }
+            });
 
             // Set click listeners for answer buttons
             ansA.setOnClickListener(this);
@@ -60,6 +74,8 @@ public class QuizLogic extends AppCompatActivity implements View.OnClickListener
 
             loadNewQuestion();
         }
+
+
 
         @Override
         public void onClick(View view) {

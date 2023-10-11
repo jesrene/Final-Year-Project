@@ -114,4 +114,6 @@ Social Connections: Spend time with friends and loved ones who provide emotional
     <string name="msg_please_enter_valid_email">Please enter valid email</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="playGame">Play\nGame</string>
+    <string name="viewVouchers">View\nVouchers</string>
 </resources>
