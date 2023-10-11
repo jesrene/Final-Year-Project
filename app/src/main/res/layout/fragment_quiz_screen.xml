@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizScreen"
+    android:gravity="end"
+    android:id="@+id/QuizScreen"
+    android:orientation="vertical"
+    style="@style/groupStylegray_50"
+    android:background="@color/gray_50">
+
+    <LinearLayout
+        android:id="@+id/backToRewards"
+        android:layout_width="@dimen/_120pxh"
+        android:layout_height="@dimen/_40pxh"
+        android:layout_weight="1.0"
+        android:orientation="horizontal"
+        android:layout_gravity="start"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_10pxh"
+            android:layout_height="@dimen/_10pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_22pxh"
+            android:src="@drawable/img_arrowleft" />
+
+        <TextView
+            android:id="@+id/rewards"
+            style="@style/txtWorkSansromanmedium22"
+            android:layout_width="74dp"
+            android:layout_height="@dimen/_18pxh"
+            android:layout_marginStart="@dimen/_6pxh"
+            android:layout_marginTop="@dimen/_18pxh"
+            android:text="Rewards"
+            android:textSize="@dimen/_12pxh" />
+    </LinearLayout>
+
+    <ImageView android:id="@+id/imageProfilepic"
+        android:layout_gravity="end"
+        android:layout_height="@dimen/_60pxh"
+        android:layout_marginStart="@dimen/_328pxh"
+        android:layout_marginTop="@dimen/_26pxh"
+        android:layout_width="@dimen/_70pxh"
+        android:src="@drawable/img_profilepic"
+        tools:ignore="ContentDescription" tools:src="@drawable/img_profilepic"/>
+
+    <RelativeLayout
+        android:layout_gravity="top|start"
+        android:layout_height="@dimen/_86pxh"
+        android:layout_marginTop="@dimen/_55pxh"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtInformationSni"
+            style="@style/txtWorkSansromansemibold32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25pxh"
+            android:lineSpacingExtra="@dimen/_1pxh"
+            android:text="Information Snippet"
+            android:textSize="@dimen/_28pxh"
+            />
+
+        <TextView android:ellipsize="end" android:gravity="start"
+            android:id="@+id/txt"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_28pxh"
+            android:layout_marginStart="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_50pxv"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:singleLine="true"
+            style="@style/txtWorkSansromanregular14"
+            android:text="Unlocking Health Knowledge with"/>
+
+        <TextView android:ellipsize="end" android:gravity="start"
+            android:id="@+id/txt1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_28pxh"
+            android:layout_marginStart="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_72pxv"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:singleLine="true"
+            style="@style/txtWorkSansromanregular14"
+            android:text="10 Informative Snippets and Questions."/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_146pxh"
+        android:paddingTop="@dimen/_10pxh">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/linearSnippet1"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_1pxv"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounter"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_12pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 1" />
+
+                <TextView
+                    android:id="@+id/txtDescription"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_11pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_16pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:text="Carbohydrates, or carbs, are sugar molecules. Along with proteins and fats, carbohydrates are one of three main nutrients found in foods and drinks. Your body breaks down carbohydrates into glucose. "
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet2"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounterOne"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="@string/lbl_snippet_2"
+                    />
+
+                <TextView
+                    android:id="@+id/txtDescriptionOne"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:text="Grains should be taken as the major dietary source. Eat more fruit and vegetables. Have a moderate amount of meat, fish, egg, milk and their alternatives."
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet3"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounterThree"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 3" />
+
+                <TextView
+                    android:id="@+id/txtDescriptionThree"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:text="To keep your mind alert, it requires energy. Energy is necessary for the brain to function properly and carry out cognitive processes such as thinking, analyzing, and problem-solving."
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet4"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounter4"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 4" />
+
+                <TextView
+                    android:id="@+id/txtDescription4"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:text="The digestive system is responsible for breaking down food into smaller molecules that can be absorbed and used by the body. The digestive system works together with digestive juices, which contain enzymes that aid in the breakdown of food."
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet5"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounter5"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 5" />
+
+                <TextView
+                    android:id="@+id/txtDescription5"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:text="The organs that form a part of the human digestive system are the esophagus, small intestine, large intestine, and stomach. These organs work together to break down food and absorb nutrients. The esophagus is responsible for transporting food from the mouth to the stomach. The stomach then further breaks down the food with the help of digestive enzymes and acids. The small intestine is where most of the digestion and absorption of nutrients takes place. Finally, the large intestine absorbs water and electrolytes from the remaining undigested food before it is eliminated through the anus."
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet6"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounter6"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 6" />
+
+                <TextView
+                    android:id="@+id/txtDescription6"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat"
+                    android:text="Physical health is defined as the overall state of one's body in terms of fitness and well-being. It encompasses factors such as strength, endurance, flexibility, and the absence of illness or disease. This definition aligns with the commonly understood concept of physical health and its importance in maintaining an active and fulfilling lifestyle."></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet7"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounter7"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 7" />
+
+                <TextView
+                    android:id="@+id/txtDescription7"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat"
+                    android:text="Lymphocytes are a type of white blood cells that play a crucial role in the immune system. They are responsible for identifying and attacking pathogens, such as bacteria and viruses, to protect the body from infections. Neurocytes are not white blood cells and do not have a role in fighting pathogens. Carcinogens are substances that can cause cancer and are not related to white blood cells or immune response."></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet8"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounter8"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 8" />
+
+                <TextView
+                    android:id="@+id/txtDescription8"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat"
+                    android:text="Children with asthma often experience more severe reactions when they breathe in secondhand smoke. Secondhand smoke contains harmful chemicals and irritants that can trigger asthma symptoms and exacerbate existing respiratory issues. The smoke can irritate the airways, causing inflammation and constriction, leading to difficulty breathing, wheezing, coughing, and increased mucus production."></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet9"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounter9"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 9" />
+
+                <TextView
+                    android:id="@+id/txtDescription9"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat"
+                    android:text="Leading risk factors for heart disease and stroke are high blood pressure, high low-density lipoprotein (LDL) cholesterol, diabetes, smoking and secondhand smoke exposure, obesity, unhealthy diet, and physical inactivity."></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearSnippet10"
+                style="@style/groupStylewhite_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSnippetCounter10"
+                    style="@style/txtWorkSansromanregular24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:text="SNIPPET 10" />
+
+                <TextView
+                    android:id="@+id/txtDescription10"
+                    style="@style/txtWorkSansromansemibold15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_14pxh"
+                    android:layout_marginBottom="@dimen/_22pxv"
+                    android:lineSpacingExtra="@dimen/_8pxh"
+                    android:gravity="fill"
+                    android:textAlignment="viewStart"
+                    tools:ignore="RtlCompat"
+                    android:text="When a person has long-term (chronic) stress, continued activation of the stress response causes wear and tear on the body. Physical, emotional and behavioral symptoms develop. Physical symptoms of stress include: aches and pains, chest pain or a feeling like your heart is racing, exhaustion or trouble sleeping, headaches, muscle tension or jaw clenching, stomach or digestive problems."></TextView>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:ellipsize="end" android:gravity="center"
+                android:id="@+id/btnImReady"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_109pxh"
+                android:layout_marginStart="@dimen/_109pxh"
+                android:layout_marginTop="@dimen/_26pxv"
+                android:layout_marginBottom="@dimen/_30pxh"
+                android:layout_width="match_parent"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="@dimen/_4pxh"
+                android:paddingBottom="@dimen/_12pxv"
+                android:paddingEnd="@dimen/_20pxh"
+                android:paddingStart="@dimen/_20pxh"
+                android:paddingTop="@dimen/_12pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_i_m_ready"
+                android:textAllCaps="false"
+                style="@style/btnGradientRounded_1" tools:text="@string/lbl_i_m_ready"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

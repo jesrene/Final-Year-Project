@@ -15,6 +15,7 @@ public class NavBar extends AppCompatActivity {
     RewardsFragment rewardsFragment = new RewardsFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
+
 //    private static NavBar instance;
 //
 //    // Private constructor to prevent direct instantiation

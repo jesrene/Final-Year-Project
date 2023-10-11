@@ -17,14 +17,14 @@ import android.widget.LinearLayout;
 public class ProfileFragment extends Fragment {
 
     LinearLayout editProfile;
+    Button logOutButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-
-        // Find the btnPlayGame button by its ID within the fragment_rewards.xml layout
+        // Find the EditProfile button by its ID within the fragment_profile.xml layout
         editProfile = view.findViewById(R.id.EditProfile);
 
         // Set an OnClickListener to handle button clicks
@@ -32,7 +32,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // Create an instance of the fragment you want to navigate to
-                fragment_edit_profile editProfileFragment = new fragment_edit_profile();
+                EditProfile editProfileFragment = new EditProfile();
 
                 // Get the FragmentManager
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -48,9 +48,22 @@ public class ProfileFragment extends Fragment {
 
                 // Commit the transaction
                 transaction.commit();
-
             }
         });
+
+        // Find the Log Out button by its ID within the fragment_profile.xml layout
+        logOutButton = view.findViewById(R.id.btnLogOut);
+
+        // Set an OnClickListener to handle button clicks
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create an Intent to start the GetStartedScreen activity
+                Intent intent = new Intent(requireContext(), GetStartedScreen.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 }

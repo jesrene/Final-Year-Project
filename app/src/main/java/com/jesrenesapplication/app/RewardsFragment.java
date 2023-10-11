@@ -6,21 +6,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class RewardsFragment extends Fragment {
     Button playGame;
     Button viewVoucher;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_rewards, container, false);
-
 
         // Find the btnPlayGame button by its ID within the fragment_rewards.xml layout
         playGame = view.findViewById(R.id.btnPlayGame);
@@ -29,20 +31,50 @@ public class RewardsFragment extends Fragment {
         playGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), QuizScreen.class);
-                startActivity(intent);
+                // Create an instance of the fragment you want to navigate to
+                QuizScreen quizScreen = new QuizScreen();
+
+                // Get the FragmentManager
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+                // Start a FragmentTransaction
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+                // Replace the current fragment with the new one
+                transaction.replace(R.id.container, quizScreen);
+
+                // Add the transaction to the back stack (optional)
+                transaction.addToBackStack(null);
+
+                // Commit the transaction
+                transaction.commit();
             }
         });
 
-        // Find the btnPlayGame button by its ID within the fragment_rewards.xml layout
+        // Find the btnViewVoucher button by its ID within the fragment_rewards.xml layout
         viewVoucher = view.findViewById(R.id.btnViewVoucher);
 
         // Set an OnClickListener to handle button clicks
         viewVoucher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), VoucherScreen.class);
-                startActivity(intent);
+                // Create an instance of the fragment you want to navigate to
+                VoucherScreen voucherScreen = new VoucherScreen();
+
+                // Get the FragmentManager
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+                // Start a FragmentTransaction
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+                // Replace the current fragment with the new one
+                transaction.replace(R.id.container, voucherScreen);
+
+                // Add the transaction to the back stack (optional)
+                transaction.addToBackStack(null);
+
+                // Commit the transaction
+                transaction.commit();
             }
         });
 

@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_started_screen); // Replace with your XML layout file
+        setContentView(R.layout.activity_get_started_screen);
 
         getStarted = findViewById(R.id.btnGetStarted);
         getStarted.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +28,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Add quiz-related logic here
     }
 }
