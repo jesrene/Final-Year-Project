@@ -63,8 +63,9 @@
             android:textAllCaps="false"
             style="@style/btnGradientRounded_1"
             android:text="@string/lbl_log_in"/>
-        <LinearLayout android:gravity="center_vertical"
-            android:id="@+id/linearSigningoogle"
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:id="@+id/btnSignInGoogle"
             android:layout_height="@dimen/_55pxh"
             android:layout_marginBottom="@dimen/_368pxv"
             android:layout_marginEnd="@dimen/_28pxh"

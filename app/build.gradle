@@ -17,6 +17,9 @@ def glideVersion = '4.11.0'
 android {
     compileSdkVersion 33
     buildToolsVersion "30.0.3"
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.jesrenesapplication.app"
@@ -57,7 +60,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.activity:activity-ktx:1.6.1"
     implementation "androidx.fragment:fragment-ktx:1.5.5"
-
+    implementation 'com.google.android.gms:play-services-auth:19.2.0' // fit api
     implementation 'com.google.android.material:material:1.7.0'
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-core-ext:$koin_version"
@@ -83,6 +86,6 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.4.0"
 
     implementation 'com.google.android.gms:play-services-fitness:20.0.0'
-
+    implementation 'com.google.android.gms:play-services-auth:20.0.0'
 }
 

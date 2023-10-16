@@ -15,22 +15,6 @@ public class NavBar extends AppCompatActivity {
     RewardsFragment rewardsFragment = new RewardsFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
-
-//    private static NavBar instance;
-//
-//    // Private constructor to prevent direct instantiation
-//
-//
-//    // Get the shared instance of NavBar
-//    public static NavBar getInstance() {
-//        if (instance == null) {
-//            instance = new NavBar();
-//        }
-//        return instance;
-//    }
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

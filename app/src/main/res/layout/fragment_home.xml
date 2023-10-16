@@ -168,7 +168,7 @@
         android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
         style="@style/groupStylecornerRadius">
         <TextView android:ellipsize="end"
-            android:id="@+id/txtEdaheading"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_10pxh"
@@ -178,6 +178,7 @@
             android:text="ELETRODERMAL ACTIVITY"
             style="@style/txtWorkSansromanregular20" />
         <TextView
+            android:id="@+id/edaTextView"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5pxv"
             android:layout_marginBottom="@dimen/_10pxh"
@@ -202,7 +203,6 @@
         android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
         style="@style/groupStylecornerRadius">
         <TextView android:ellipsize="end"
-            android:id="@+id/txtHeartratehead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_10pxh"
@@ -213,6 +213,7 @@
             android:text="HEART RATE"
             style="@style/txtWorkSansromanregular20" />
         <TextView
+            android:id="@+id/heartRateTextView"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5pxv"
             android:layout_marginBottom="@dimen/_10pxh"
