@@ -3,6 +3,7 @@ package com.jesrenesapplication.app;
 import static androidx.fragment.app.FragmentManager.TAG;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -118,6 +119,7 @@ public class SignUpScreen extends AppCompatActivity {
             updateUI(null);
         }
     }
+
     // Define the updateUI method
     private void updateUI(GoogleSignInAccount account) {
         if (account != null) {
@@ -134,5 +136,17 @@ public class SignUpScreen extends AppCompatActivity {
             // You can handle this case by displaying a sign-in button or any other logic.
         }
     }
+}
 
- }
+
+//    GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+//    if (account != null) {
+//        String displayName = account.getDisplayName(); // Retrieve the user's display name (name).
+//        String email = account.getEmail();
+//        String userId = account.getId();
+//        Uri photoUrl = account.getPhotoUrl();
+//
+//    } else {
+//        // The user is not signed in; handle this case accordingly.
+//    }
+//}
