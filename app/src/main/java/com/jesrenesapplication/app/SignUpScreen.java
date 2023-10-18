@@ -10,9 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -107,18 +107,25 @@ public class SignUpScreen extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            // Signed in successfully, you can navigate to the next activity and pass user data
             String email = account.getEmail();
-            Intent intent = new Intent(SignUpScreen.this, NavBar.class);
+            Uri photoUri = account.getPhotoUrl();
+
+            // Create an intent to navigate to the NavBar activity
+            Intent intent = new Intent(this, NavBar.class);
+
+            // Pass user data to the NavBar activity
             intent.putExtra("userEmail", email);
+            intent.putExtra("userPhotoUrl", photoUri != null ? photoUri.toString() : "");
+
+            // Start the NavBar activity
             startActivity(intent);
+
         } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
             updateUI(null);
         }
     }
+
 
     // Define the updateUI method
     private void updateUI(GoogleSignInAccount account) {

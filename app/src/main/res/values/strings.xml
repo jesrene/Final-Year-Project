@@ -116,4 +116,8 @@ Social Connections: Spend time with friends and loved ones who provide emotional
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="playGame">Play\nGame</string>
     <string name="viewVouchers">View\nVouchers</string>
+    <string name="google_sign_in_metadata">
+    YOUR_WEB_CLIENT_ID
+</string>
+
 </resources>

@@ -38,8 +38,16 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.VIEW" />
+                <action android:name="com.google.android.gms.auth.GOOGLE_SIGN_IN" />
+                <category android:name="android.intent.category.DEFAULT" />
+
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.signin"
+            android:value="@string/google_sign_in_metadata" />
+
     </application>
 
 </manifest>
