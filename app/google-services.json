@@ -1,1 +1,29 @@
-{"installed":{"client_id":"1017355747558-f7211e8i7kd20uuodumbh9cs8gbup72n.apps.googleusercontent.com","project_id":"fleez-401607","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs"}}
+{
+  "project_info": {
+    "project_number": "690972568870",
+    "project_id": "fleez-394c9",
+    "storage_bucket": "fleez-394c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690972568870:android:1cc40f1037845409f565e7",
+        "android_client_info": {
+          "package_name": "com.jesrenesapplication.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEL2DDhoz-LUA8K7qGEml9utzQAC6zkG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

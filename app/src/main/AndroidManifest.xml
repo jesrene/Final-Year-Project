@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.jesrenesapplication.app">
+    package="com.jesrenesapplication.app"
+    tools:ignore="CoarseFineLocation">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BODY_SENSORS"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
 
     <application
@@ -20,7 +25,7 @@
         android:theme="@style/Theme.MyApp"
         android:usesCleartextTraffic="true">
 
-        <!-- screen classes that are displayed in the app  -->
+        <!-- Activities -->
         <activity android:name=".GetStartedScreen" />
         <activity android:name=".SignUpScreen" />
         <activity android:name=".CreateAccountScreen" />
@@ -30,25 +35,30 @@
         <activity android:name=".QuizLogic" />
         <activity android:name=".ScoreScreen" />
 
-        <!-- first activity when opening the app -->
+        <!-- Your MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="com.google.android.gms.auth.GOOGLE_SIGN_IN" />
-                <category android:name="android.intent.category.DEFAULT" />
-
             </intent-filter>
         </activity>
+
+        <!-- Service -->
+        <service
+            android:name=".appcomponents.di.MyApp"
+            android:process=":sensor"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.GOOGLE_SIGN_IN" />
+                <action android:name="com.google.android.gms.fitness.service.FitnessSensorService" />
+                <data android:mimeType="vnd.google.fitness.data_type/com.google.heart_rate.bpm" />
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="com.google.android.gms.signin"
             android:value="@string/google_sign_in_metadata" />
-
     </application>
-
 </manifest>
-

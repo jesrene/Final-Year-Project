@@ -10,15 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.fitness.Fitness;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -30,7 +30,7 @@ public class SignUpScreen extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen);
 
@@ -39,12 +39,13 @@ public class SignUpScreen extends AppCompatActivity {
         signInWithGoogleButton = findViewById(R.id.btnSignInGoogle);
 
         // Configure sign-in to request the user's ID, email address, and basic profile
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder()
+        GoogleSignInOptions options = new GoogleSignInOptions.Builder()
                 .requestEmail()
+                .requestScopes(Fitness.SCOPE_ACTIVITY_READ_WRITE, Fitness.SCOPE_BODY_READ_WRITE)
                 .build();
 
         // Build a GoogleSignInClient with the options specified by gso
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(this, options);
 
 
         signUp.setOnClickListener(new View.OnClickListener() {
