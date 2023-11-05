@@ -1,16 +1,23 @@
 package com.jesrenesapplication.app;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.squareup.picasso.Picasso;
 
 import org.tensorflow.lite.Interpreter;
 
@@ -20,23 +27,61 @@ import java.nio.ByteOrder;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
+
 public class HomeFragment extends Fragment {
 
     private Interpreter tflite;
     private EditText heartRateInput;
     private Button predictButton;
     private TextView mentalStateText;
+    private Picasso picasso;
+    private void setUserDetails(View view) {
+        // Retrieve the user's email and profile picture URL from SharedPreferences
+        SharedPreferences preferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        String profilePic = preferences.getString("userPhotoUrl", "");
+        Log.d("EditProfileFragment", "pic: " + profilePic);
 
+        // Retrieve the GoogleSignInAccount from the intent
+        GoogleSignInAccount account = getActivity().getIntent().getParcelableExtra("googleSignInAccount");
+
+        ImageView imageProfilepic = view.findViewById(R.id.imageProfilepic);
+
+        if (account != null) {
+            // Get the user's profile picture Uri
+            Uri photoUri = account.getPhotoUrl();
+
+            // Initialize Picasso (if not already initialized)
+            if (picasso == null) {
+                picasso = new Picasso.Builder(requireContext()).build();
+            }
+
+            if (photoUri != null) {
+                picasso.load(photoUri)
+                        .transform(new CropCircleTransformation()) // Apply circular transformation
+                        .into(imageProfilepic);
+                Log.d("PhotoUri", photoUri.toString());
+            } else {
+                // If photoUri is null, set a default image
+                imageProfilepic.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
+            }
+        } else {
+            // Handle the case where GoogleSignInAccount is null
+            // You may want to display an error or take appropriate action.
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        setUserDetails(view);
         // Initialize UI elements
         heartRateInput = view.findViewById(R.id.heartRateTextView);
         predictButton = view.findViewById(R.id.button);
         mentalStateText = view.findViewById(R.id.textMentalState);
+
+
 
         // Load the TFLite model from the assets folder
         try {
@@ -44,28 +89,6 @@ public class HomeFragment extends Fragment {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-//        // Retrieve the GoogleSignInAccount from the Intent
-//        GoogleSignInAccount account = getActivity().getIntent().getParcelableExtra("googleSignInAccount");
-//
-//        ImageView imageProfilepic = view.findViewById(R.id.imageProfilepic);
-//
-//        if (account != null) {
-//            // Get the user's profile picture Uri
-//            Uri photoUri = account.getPhotoUrl();
-//
-//            if (photoUri != null) {
-//                // Use Picasso to load and display the image
-//                Log.d("PhotoUri", photoUri.toString());
-//                Picasso.get().load(photoUri).into(imageProfilepic);
-//            } else {
-//                // If photoUri is null, set a default image
-//                imageProfilepic.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
-//            }
-//        } else {
-//            // If the GoogleSignInAccount is null, set a default image
-//            imageProfilepic.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
-//        }
 
 
         predictButton.setOnClickListener(new View.OnClickListener() {
@@ -123,9 +146,9 @@ public class HomeFragment extends Fragment {
     // Add your logic to convert the prediction value to a user-friendly string
     private String convertPredictionToString(float prediction) {
         if (prediction < 0.5) {
-            return "Low Stress";
+            return "Not in stress";
         } else {
-            return "High Stress";
+            return "In stress";
         }
     }
 }

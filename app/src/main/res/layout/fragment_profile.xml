@@ -21,7 +21,7 @@
         android:orientation="vertical" style="@style/groupStylecornerRadius_1">
 
         <ImageView
-            android:id="@+id/imageProfilepicture"
+            android:id="@+id/imageProfilepic"
             android:layout_width="@dimen/_172pxh"
             android:layout_height="@dimen/_172pxh"
             android:layout_centerHorizontal="true"
@@ -32,7 +32,7 @@
             android:src="@drawable/img_profilepic" />
 
         <TextView
-            android:id="@+id/txtSongYuQi"
+            android:id="@+id/txtName"
             style="@style/txtWorkSansromansemibold32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +75,8 @@
             android:layout_width="match_parent"
             android:layout_centerHorizontal="true"
             android:orientation="horizontal"
-            style="@style/groupStylewhite_A700cornerRadius">
+            style="@style/groupStylecornerRadius"
+            android:background="@drawable/shadow">
 
             <TextView
                 android:id="@+id/txtEditProfile"
@@ -121,7 +122,9 @@
             android:layout_marginTop="@dimen/_610pxv"
             android:layout_width="match_parent"
             android:layout_centerHorizontal="true"
-            android:orientation="horizontal" style="@style/groupStylewhite_A700cornerRadius">
+            android:orientation="horizontal"
+            style="@style/groupStylecornerRadius"
+            android:background="@drawable/shadow">
             <TextView android:ellipsize="end"
                 android:id="@+id/txtNotification"
                 android:text="Notification"

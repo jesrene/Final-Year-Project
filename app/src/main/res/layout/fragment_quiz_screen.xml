@@ -38,7 +38,8 @@
             android:textSize="@dimen/_12pxh" />
     </LinearLayout>
 
-    <ImageView android:id="@+id/imageProfilepic"
+    <ImageView
+        android:id="@+id/imageProfilepic"
         android:layout_gravity="end"
         android:layout_height="@dimen/_60pxh"
         android:layout_marginStart="@dimen/_328pxh"
@@ -103,13 +104,14 @@
             android:orientation="vertical">
             <LinearLayout
                 android:id="@+id/linearSnippet1"
-                style="@style/groupStylewhite_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20pxh"
                 android:layout_marginTop="@dimen/_1pxv"
                 android:layout_marginEnd="@dimen/_20pxh"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow">
 
                 <TextView
                     android:id="@+id/txtSnippetCounter"
@@ -143,13 +145,14 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet2"
-                style="@style/groupStylewhite_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"
                 android:layout_marginStart="@dimen/_20pxh"
                 android:layout_marginEnd="@dimen/_20pxh"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow">
 
                 <TextView
                     android:id="@+id/txtSnippetCounterOne"
@@ -185,12 +188,13 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet3"
-                style="@style/groupStylewhite_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"
                 android:layout_marginStart="@dimen/_20pxh"
                 android:layout_marginEnd="@dimen/_20pxh"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow"
                 android:orientation="vertical">
 
                 <TextView
@@ -225,7 +229,8 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet4"
-                style="@style/groupStylewhite_3"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"
@@ -265,7 +270,8 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet5"
-                style="@style/groupStylewhite_3"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"
@@ -305,7 +311,8 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet6"
-                style="@style/groupStylewhite_3"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"
@@ -345,7 +352,8 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet7"
-                style="@style/groupStylewhite_3"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"
@@ -385,7 +393,8 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet8"
-                style="@style/groupStylewhite_3"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"
@@ -425,7 +434,8 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet9"
-                style="@style/groupStylewhite_3"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"
@@ -465,7 +475,8 @@
 
             <LinearLayout
                 android:id="@+id/linearSnippet10"
-                style="@style/groupStylewhite_3"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20pxv"

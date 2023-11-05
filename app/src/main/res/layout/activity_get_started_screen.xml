@@ -33,6 +33,7 @@
             android:paddingTop="@dimen/_12pxv" android:singleLine="true"
             android:text="@string/lbl_get_started"
             android:textAllCaps="false"
-            style="@style/btnGradientRounded" tools:text="@string/lbl_get_started"/>
+            style="@style/btnGradientRounded" tools:text="@string/lbl_get_started"
+            android:elevation="4dp"/>
     </LinearLayout>
 </layout>

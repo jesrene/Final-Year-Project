@@ -105,12 +105,13 @@
 
             <LinearLayout
                 android:id="@+id/linearColumndescription"
-                style="@style/groupStylewhite_1"
                 android:layout_width="@dimen/_370pxh"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_7pxv"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                style="@style/groupStylecornerRadius"
+                android:background="@drawable/shadow">
 
                 <TextView
                     android:id="@+id/txtDescription"
@@ -162,6 +163,7 @@
                 android:layout_marginBottom="@dimen/_8pxv"
                 android:lineSpacingExtra="@dimen/_3pxh"
                 android:padding="@dimen/_10pxh"
+
                 android:text="You can’t avoid stress, but you can stop it from becoming overwhelming by practicing some daily strategies:
 
 Regular Exercise: Physical activity is a powerful stress reliever. When you feel stress creeping in, taking a break for a short walk, jog, or even a few minutes of stretching can help release endorphins, which are natural mood lifters. Regular exercise can also improve your overall resilience to stress.

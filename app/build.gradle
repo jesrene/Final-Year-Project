@@ -96,6 +96,7 @@ dependencies {
 
     // google profile picture
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'jp.wasabeef:picasso-transformations:2.4.0'
 
     // rest api
 //    implementation 'com.squareup.retrofit2:retrofit:2.9.0'

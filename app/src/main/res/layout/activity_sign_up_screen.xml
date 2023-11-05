@@ -5,15 +5,6 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylegray_50">
-        <ImageView android:id="@+id/imageProfilepic"
-            android:layout_gravity="end"
-            android:layout_height="@dimen/_60pxh"
-            android:layout_marginTop="@dimen/_30pxv"
-            android:layout_marginEnd="@dimen/_8pxh"
-            android:layout_marginStart="@dimen/_310pxh"
-            android:layout_width="@dimen/_70pxh"
-            android:src="@drawable/img_profilepic"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_profilepic"/>
         <TextView android:ellipsize="end" android:id="@+id/txtLanguage"
             android:layout_gravity="start"
             android:layout_height="wrap_content"
@@ -53,7 +44,8 @@
             android:singleLine="true"
             android:text="@string/lbl_sign_up"
             android:textAllCaps="false"
-            style="@style/btnGradientRounded_1" />
+            style="@style/btnGradientRounded_1"
+            android:elevation="4dp"/>
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"
             android:id="@+id/btnLogIn"
@@ -71,7 +63,8 @@
             android:singleLine="true"
             android:textAllCaps="false"
             style="@style/btnGradientRounded_1"
-            android:text="@string/lbl_log_in"/>
+            android:text="@string/lbl_log_in"
+            android:elevation="4dp"/>
         <LinearLayout
             android:gravity="center_vertical"
             android:id="@+id/btnSignInGoogle"
@@ -81,7 +74,9 @@
             android:layout_marginStart="@dimen/_28pxh"
             android:layout_marginTop="@dimen/_54pxv"
             android:layout_width="match_parent"
-            android:orientation="horizontal" style="@style/groupStylegray_100cornerRadius">
+            android:orientation="horizontal" style="@style/groupStylegray_100cornerRadius"
+            android:elevation="4dp">
+
             <ImageView android:id="@+id/imageGoogle"
                 android:layout_height="@dimen/_28pxh"
                 android:layout_marginBottom="@dimen/_9pxv"
