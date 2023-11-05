@@ -1,180 +1,132 @@
 package com.jesrenesapplication.app;
 
-import android.Manifest;
-import android.content.IntentSender;
-import android.content.pm.PackageManager;
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.LinearLayout;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.fitness.Fitness;
-import com.google.android.gms.fitness.data.DataType;
-import com.google.android.gms.fitness.data.Field;
-import com.google.android.gms.fitness.data.Value;
-import com.google.android.gms.fitness.request.OnDataPointListener;
-import com.google.android.gms.fitness.request.SensorRequest;
+import org.tensorflow.lite.Interpreter;
 
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
+import java.io.FileInputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 
 public class HomeFragment extends Fragment {
 
-    private LinearLayout mentalState;
-    private GoogleSignInClient mGoogleSignInClient;
-    private TextView heartRateTextView;
-    private OnDataPointListener heartRateListener;
-
-    private GoogleApiClient mGoogleApiClient;
-
-    private static final int REQUEST_BODY_SENSORS_PERMISSION = 1001;
-    private static final int REQUEST_RESOLUTION = 1002; // Define this constant
+    private Interpreter tflite;
+    private EditText heartRateInput;
+    private Button predictButton;
+    private TextView mentalStateText;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .requestScopes(Fitness.SCOPE_ACTIVITY_READ_WRITE)
-                .build();
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        mGoogleSignInClient = GoogleSignIn.getClient(requireContext(), gso);
+        // Initialize UI elements
+        heartRateInput = view.findViewById(R.id.heartRateTextView);
+        predictButton = view.findViewById(R.id.button);
+        mentalStateText = view.findViewById(R.id.textMentalState);
 
-        mGoogleApiClient = new GoogleApiClient.Builder(requireContext())
-                .addApi(Fitness.SENSORS_API)
-                .useDefaultAccount()
-                .addScope(Fitness.SCOPE_ACTIVITY_READ_WRITE)
-                .addOnConnectionFailedListener(connectionResult -> {
-                    // Handle connection failure
-                    Log.e("GoogleFit", "Connection to Google Fit failed");
-                    if (connectionResult.hasResolution()) {
-                        try {
-                            // Handle resolution, e.g., show a dialog to resolve the issue.
-                            connectionResult.startResolutionForResult(requireActivity(), REQUEST_RESOLUTION);
-                        } catch (IntentSender.SendIntentException e) {
-                            // Handle the exception
-                            Log.e("GoogleFit", "Exception when starting resolution: " + e.getMessage());
-                        }
-                    } else {
-                        // Handle the failure, e.g., show an error message.
-                        Log.e("GoogleFit", "Unresolvable failure");
-                        Toast.makeText(requireContext(), "Failed to connect to Google Fit. Please check your permissions and network.", Toast.LENGTH_LONG).show();
-
-                    }
-                })
-
-                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
-                    @Override
-                    public void onConnected(Bundle bundle) {
-                        // Handle successful connection
-                        Log.d("GoogleFit", "Connected to Google Fit");
-                    }
-                    @Override
-                    public void onConnectionSuspended(int i) {
-                        // Handle connection suspension
-                        Log.d("GoogleFit", "Connection to Google Fit suspended");
-                    }
-                })
-
-                .build();
-
-        mGoogleApiClient.connect();
-
-
-        // Check if the app has the BODY_SENSORS permission
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.BODY_SENSORS) == PackageManager.PERMISSION_GRANTED) {
-            // The permission is already granted; proceed with data retrieval
-            Log.d("PermissionGranted", "BODY_SENSORS permission is granted.");
-
-            // Check if a Google account has been logged in
-            if (isGoogleAccountLoggedIn()) {
-                Log.d("GoogleSignIn", "Google account is logged in.");
-                accessHeartRateData();
-            } else {
-                Log.d("GoogleSignIn", "Google account is not logged in.");
-                // You can handle the case where the Google account is not logged in, such as showing a login screen.
-            }
-        } else {
-            // Request the BODY_SENSORS permission from the user
-            requestBodySensorsPermission();
+        // Load the TFLite model from the assets folder
+        try {
+            tflite = new Interpreter(loadModelFile(requireContext()));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }
 
-    private boolean isGoogleAccountLoggedIn() {
-        // Get the Google account that is logged in
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(requireContext());
-
-        if (account != null) {
-            // A Google account is logged in
-            String email = account.getEmail();
-
-            // Log the Google email
-            Log.d("GoogleSignIn", "Google account is logged in. Email: " + email);
-
-            // You can also use 'account.getId()' to get the user's unique ID, or 'account.getDisplayName()' for their display name.
-
-            return true;
-        } else {
-            // No Google account is logged in
-            Log.d("GoogleSignIn", "No Google account is logged in.");
-            return false;
-        }
-    }
-
-    private void requestBodySensorsPermission() {
-        ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.BODY_SENSORS}, REQUEST_BODY_SENSORS_PERMISSION);
-    }
-
-
-    private void accessHeartRateData() {
-        // Create an instance of the SensorsClient
-        heartRateListener = dataPoint -> {
-            for (Field field : dataPoint.getDataType().getFields()) {
-                Value value = dataPoint.getValue(field);
-                int heartRate = value.asInt();
-                Log.i("HeartRateData", "Heart Rate: " + heartRate);
-
-            }
-        };
-        // Subscribe to heart rate data recording
-        Fitness.getRecordingClient(requireContext(), Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(requireContext())))
-                .subscribe(DataType.TYPE_HEART_RATE_BPM)
-                .addOnSuccessListener(aVoid -> {
-                    Log.i("HeartRateSubscription", "Successfully subscribed to heart rate data recording!");
-                    // Register the data listener for real-time updates
-                    registerHeartRateDataListener();
-                })
-                .addOnFailureListener(e -> Log.e("HeartRateSubscription", "Failed to subscribe to heart rate data recording.", e));
-    }
+//        // Retrieve the GoogleSignInAccount from the Intent
+//        GoogleSignInAccount account = getActivity().getIntent().getParcelableExtra("googleSignInAccount");
 //
-//        Fitness.getSensorsClient(requireContext(), Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(requireContext())))
-//                .add(sensorRequest, heartRateListener)
-//                .addOnSuccessListener(aVoid -> Log.d("SensorsClient", "Listener registered."))
-//                .addOnFailureListener(e -> Log.e("SensorsClient", "Listener registration failed.", e));
-//}
+//        ImageView imageProfilepic = view.findViewById(R.id.imageProfilepic);
+//
+//        if (account != null) {
+//            // Get the user's profile picture Uri
+//            Uri photoUri = account.getPhotoUrl();
+//
+//            if (photoUri != null) {
+//                // Use Picasso to load and display the image
+//                Log.d("PhotoUri", photoUri.toString());
+//                Picasso.get().load(photoUri).into(imageProfilepic);
+//            } else {
+//                // If photoUri is null, set a default image
+//                imageProfilepic.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
+//            }
+//        } else {
+//            // If the GoogleSignInAccount is null, set a default image
+//            imageProfilepic.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
+//        }
 
-    private void registerHeartRateDataListener() {
-        SensorRequest sensorRequest = new SensorRequest.Builder()
-                .setDataType(DataType.TYPE_HEART_RATE_BPM)
-                .setSamplingRate(1, TimeUnit.MINUTES)
-                .build();
 
-        Fitness.getSensorsClient(requireContext(), Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(requireContext())))
-                .add(sensorRequest, heartRateListener)
-                .addOnSuccessListener(aVoid -> Log.d("SensorsClient", "Listener registered."))
-                .addOnFailureListener(e -> Log.e("SensorsClient", "Listener registration failed.", e));
+        predictButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    float heartRate = Float.parseFloat(heartRateInput.getText().toString());
+
+                    String prediction = predictStress(heartRate);
+                    mentalStateText.setText(prediction);
+                } catch (NumberFormatException e) {
+                    mentalStateText.setText("Invalid input. Please enter a valid number.");
+                }
+            }
+        });
+    return view;
     }
 
+    // Load the TFLite model from the assets folder
+    private MappedByteBuffer loadModelFile(Context context) throws Exception {
+        AssetFileDescriptor fileDescriptor;
+        fileDescriptor = context.getAssets().openFd("knn_model_hr.tflite");
+        FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
+        FileChannel fileChannel = inputStream.getChannel();
+        long startOffset = fileDescriptor.getStartOffset();
+        long declaredLength = fileDescriptor.getDeclaredLength();
 
+        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
+    }
+
+    // Perform KNN prediction using the TFLite model
+    private String predictStress(float heartRate) {
+        // Create a ByteBuffer to hold the input data
+        ByteBuffer inputBuffer = ByteBuffer.allocateDirect(4); // 4 bytes for a single float
+        inputBuffer.order(ByteOrder.nativeOrder());
+
+        // Copy the input data (float) into the ByteBuffer
+        inputBuffer.putFloat(heartRate);
+
+        // Prepare the output buffer
+        float[][] output = new float[1][1];
+
+        // Run inference
+        tflite.run(inputBuffer, output);
+
+        // The result is in the output[0]
+        float prediction = output[0][0];
+
+        // Perform some logic to convert the prediction to a string
+        String predictionString = convertPredictionToString(prediction);
+
+        return predictionString;
+    }
+
+    // Add your logic to convert the prediction value to a user-friendly string
+    private String convertPredictionToString(float prediction) {
+        if (prediction < 0.5) {
+            return "Low Stress";
+        } else {
+            return "High Stress";
+        }
+    }
 }
+

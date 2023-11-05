@@ -113,32 +113,31 @@
                 </LinearLayout>
             </FrameLayout>
 
-            <LinearLayout
-                android:id="@+id/linearName"
+            <RelativeLayout
+                android:id="@+id/relativeName"
                 style="@style/groupStylewhite_A700cornerRadius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15pxv"
                 android:layout_marginStart="@dimen/_20pxh"
-                android:layout_marginEnd="@dimen/_20pxh"
-                android:orientation="horizontal">
+                android:layout_marginEnd="@dimen/_20pxh">
 
                 <TextView
-                    android:id="@+id/txtNAME"
+                    android:id="@+id/name"
                     style="@style/txtWorkSansromanregular18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_11pxh"
                     android:layout_marginTop="@dimen/_5pxv"
                     android:layout_marginBottom="@dimen/_8pxv"
-                    android:layout_weight="0"
+                    android:layout_alignParentStart="true"
                     android:ellipsize="end"
                     android:lineSpacingExtra="@dimen/_4pxh"
                     android:singleLine="true"
                     android:text="@string/lbl_name" />
 
                 <TextView
-                    android:id="@+id/txtSongYuQi"
+                    android:id="@+id/txtName"
                     style="@style/txtWorkSansromanregular20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -146,12 +145,13 @@
                     android:layout_marginTop="@dimen/_5pxv"
                     android:layout_marginEnd="@dimen/_5pxh"
                     android:layout_marginBottom="@dimen/_5pxv"
-                    android:layout_weight="0"
+                    android:layout_alignParentEnd="true"
                     android:ellipsize="end"
                     android:lineSpacingExtra="@dimen/_4pxh"
                     android:singleLine="true"
                     android:text="@string/lbl_song_yu_qi" />
-            </LinearLayout>
+            </RelativeLayout>
+
 
 
             <RelativeLayout
@@ -168,19 +168,19 @@
                 <TextView
                     android:id="@+id/txtEMAIL"
                     style="@style/txtWorkSansromanregular18"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_15pxh"
                     android:layout_marginTop="@dimen/_10pxv"
                     android:layout_marginBottom="@dimen/_10pxv"
-                    android:layout_weight="0.5"
-                    android:ellipsize="end"
-                    android:lineSpacingExtra="@dimen/_4pxh"
-                    android:singleLine="true"
-                    android:text="@string/lbl_email" />
+                    android:layout_alignParentStart="true"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/_4pxh"
+                android:singleLine="true"
+                android:text="@string/lbl_email" />
 
                 <TextView
-                    android:id="@+id/txtEmailOne"
+                    android:id="@+id/txtEmail"
                     style="@style/txtWorkSansromanregular20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -188,13 +188,13 @@
                     android:layout_marginTop="@dimen/_5pxv"
                     android:layout_marginEnd="@dimen/_5pxh"
                     android:layout_marginBottom="@dimen/_5pxv"
-                    android:layout_toEndOf="@+id/txtEMAIL"
-                    android:layout_weight="0"
-                    android:ellipsize="end"
-                    android:lineSpacingExtra="@dimen/_4pxh"
-                    android:singleLine="true"
-                    android:text="@string/lbl_yukii_gmail_com" />
+                    android:layout_alignParentEnd="true"                  android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/_4pxh"
+                android:singleLine="true"
+                android:gravity="end"
+                android:text="@string/lbl_yukii_gmail_com" />
             </RelativeLayout>
+
 
             <RelativeLayout
                 android:id="@+id/linearPassword"

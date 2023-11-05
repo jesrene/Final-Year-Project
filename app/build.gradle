@@ -85,7 +85,20 @@ dependencies {
     implementation("androidx.security:security-crypto:1.0.0")
     implementation "com.airbnb.android:lottie:3.4.0"
 
+    // google api dependencies
     implementation 'com.google.android.gms:play-services-fitness:20.0.0'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.android.gms:play-services-plus:8.3.0'
+
+
+    // tensorflow
+    implementation 'org.tensorflow:tensorflow-lite:+'
+
+    // google profile picture
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // rest api
+//    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+//    implementation 'com.squareup.retrofit2.converter-gson:2.9.0'
 }
 

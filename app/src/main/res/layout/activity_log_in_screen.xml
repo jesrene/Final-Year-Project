@@ -43,12 +43,12 @@
                 android:singleLine="true"
                 style="@style/txtWorkSansromanregular18" android:text="@string/lbl_email"/>
             <EditText
-                android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
+                android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_30_radius_12"
                 android:ellipsize="end"
                 android:hint="Enter your email here"
                 android:id="@+id/editEmail"
                 android:inputType="textEmailAddress"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_55pxh"
                 android:layout_marginTop="@dimen/_3pxv"
                 android:layout_width="match_parent"
                 android:lineSpacingExtra="@dimen/_4pxh"
@@ -77,11 +77,11 @@
                 android:singleLine="true"
                 style="@style/txtWorkSansromanregular18" android:text="@string/lbl_password"/>
             <EditText
-                android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_31_radius_12"
+                android:background="@drawable/rectangle_bg_white_a700_border_bluegray_900_30_radius_12"
                 android:ellipsize="end" android:hint="Enter your password here"
                 android:id="@+id/editPassword"
                 android:inputType="textPassword"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_55pxh"
                 android:layout_marginTop="@dimen/_3pxv"
                 android:layout_width="match_parent"
                 android:lineSpacingExtra="@dimen/_4pxh"
