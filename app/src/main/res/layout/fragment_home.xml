@@ -47,151 +47,6 @@
         android:textSize="@dimen/_24pxh"/>
 
     <LinearLayout android:gravity="start"
-        android:id="@+id/linearMentalstate"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15pxh"
-        android:layout_marginTop="@dimen/_180pxv"
-        android:layout_width="@dimen/_350pxh"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        style="@style/groupStylecornerRadius"
-        android:background="@drawable/shadow"
-        >
-
-        <TextView android:ellipsize="end"
-            android:id="@+id/txtMentalstatehe"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginStart="@dimen/_25pxh"
-            android:layout_marginTop="@dimen/_5pxh"
-            android:layout_width="wrap_content"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:singleLine="true"
-            android:text="MENTAL STATE"
-            style="@style/txtWorkSansromanregular20"/>
-        <TextView
-            android:id="@+id/textMentalState"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5pxv"
-            android:layout_marginStart="@dimen/_30pxh"
-            android:paddingBottom="@dimen/_10pxh"
-            android:layout_width="match_parent"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:text="@string/lbl_stressed"
-            style="@style/txtWorkSansromanmedium20_1"
-            android:singleLine="true"
-            android:textColorHint="@color/gray_901" />
-    </LinearLayout>
-
-
-    <LinearLayout android:gravity="start"
-        android:id="@+id/linearStepcount"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15pxh"
-        android:layout_marginTop="@dimen/_280pxv"
-        android:layout_width="@dimen/_350pxh"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        style="@style/groupStylecornerRadius"
-        android:background="@drawable/shadow">
-
-        <TextView android:ellipsize="end"
-            android:id="@+id/txtPrice"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginStart="@dimen/_25pxh"
-            android:layout_marginTop="@dimen/_5pxh"
-            android:layout_width="wrap_content"
-            android:singleLine="true"
-            android:text="STEP COUNT"
-            style="@style/txtWorkSansromanregular20"/>
-
-        <TextView
-            android:id="@+id/stepCountContent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5pxv"
-            android:layout_marginStart="@dimen/_30pxh"
-            android:paddingBottom="@dimen/_10pxh"
-            android:layout_width="match_parent"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:text="@string/lbl_4002_steps"
-            style="@style/txtWorkSansromanmedium20_1"
-            android:singleLine="true"
-            android:textColorHint="@color/gray_901"
-            />
-    </LinearLayout>
-
-
-    <LinearLayout android:gravity="start"
-        android:id="@+id/linearAccdata"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15pxh"
-        android:layout_marginTop="@dimen/_380pxv"
-        android:layout_width="@dimen/_350pxh"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        style="@style/groupStylecornerRadius"
-        android:background="@drawable/shadow">
-
-        <TextView android:ellipsize="end"
-            android:id="@+id/txtAccdataheadin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginStart="@dimen/_25pxh"
-            android:layout_marginTop="@dimen/_5pxh"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:singleLine="true"
-            android:text="ACCELEROMETER DATA"
-            style="@style/txtWorkSansromanregular20" />
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5pxv"
-            android:layout_marginStart="@dimen/_30pxh"
-            android:paddingBottom="@dimen/_10pxh"
-            android:layout_width="match_parent"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:text="@string/lbl_60_m_s2"
-            style="@style/txtWorkSansromanmedium20_1"
-            android:singleLine="true"
-            android:textColorHint="@color/gray_901"/>
-    </LinearLayout>
-
-    <LinearLayout android:gravity="start"
-        android:id="@+id/linearEda"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15pxh"
-        android:layout_marginTop="@dimen/_480pxv"
-        android:layout_width="@dimen/_350pxh"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        style="@style/groupStylecornerRadius"
-        android:background="@drawable/shadow">
-        <TextView android:ellipsize="end"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginStart="@dimen/_25pxh"
-            android:layout_marginTop="@dimen/_5pxh"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:text="ELETRODERMAL ACTIVITY"
-            style="@style/txtWorkSansromanregular20" />
-        <TextView
-            android:id="@+id/edaTextView"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5pxv"
-            android:layout_marginStart="@dimen/_30pxh"
-            android:paddingBottom="@dimen/_10pxh"
-            android:layout_width="match_parent"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:text="@string/lbl_30_s"
-            style="@style/txtWorkSansromanmedium20_1"
-            android:singleLine="true"
-            android:textColorHint="@color/gray_901"/>
-    </LinearLayout>
-
-    <LinearLayout android:gravity="start"
         android:id="@+id/linearHeartrate"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_15pxh"
@@ -232,6 +87,80 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
+    </LinearLayout>
+
+
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearMentalstate"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15pxh"
+        android:layout_marginTop="@dimen/_350pxv"
+        android:layout_width="@dimen/_350pxh"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        style="@style/groupStylecornerRadius"
+        android:background="@drawable/shadow"
+        >
+
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtMentalstatehe"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_marginStart="@dimen/_25pxh"
+            android:layout_marginTop="@dimen/_5pxh"
+            android:layout_width="wrap_content"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:singleLine="true"
+            android:text="MENTAL STATE"
+            style="@style/txtWorkSansromanregular20"/>
+        <TextView
+            android:id="@+id/textMentalState"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5pxv"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_10pxh"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:text="Please input your heart rate"
+            style="@style/txtWorkSansromanmedium20_1"
+            android:singleLine="true"
+            android:textColorHint="@color/gray_901" />
+    </LinearLayout>
+
+
+
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearEda"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15pxh"
+        android:layout_marginTop="@dimen/_480pxv"
+        android:layout_width="@dimen/_350pxh"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        style="@style/groupStylecornerRadius"
+        android:background="@drawable/shadow">
+        <TextView android:ellipsize="end"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_marginStart="@dimen/_25pxh"
+            android:layout_marginTop="@dimen/_5pxh"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:text="ELETRODERMAL ACTIVITY"
+            style="@style/txtWorkSansromanregular20" />
+        <TextView
+            android:id="@+id/edaTextView"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5pxv"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_10pxh"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:text="@string/lbl_30_s"
+            style="@style/txtWorkSansromanmedium20_1"
+            android:singleLine="true"
+            android:textColorHint="@color/gray_901"/>
     </LinearLayout>
 
 </RelativeLayout>

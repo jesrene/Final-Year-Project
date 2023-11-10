@@ -59,7 +59,6 @@ public class LogInScreen extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                     Toast.makeText(LogInScreen.this, "Please enter both email and password.", Toast.LENGTH_SHORT).show();
-                    return;
                 }
 
                 // Here, you need to implement logic to retrieve the user by email

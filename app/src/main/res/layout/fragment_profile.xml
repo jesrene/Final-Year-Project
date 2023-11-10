@@ -167,6 +167,6 @@
             android:text="@string/lbl_log_out"
             android:textAllCaps="false"
             style="@style/btnSolidRoundedOutline" tools:text="@string/lbl_log_out"
-            />
+            android:background="@drawable/shadow"/>
 
 </RelativeLayout>

@@ -90,6 +90,8 @@ public class RewardsFragment extends Fragment {
         loadUserProfilePicture();
         return view;
     }
+
+
     private void loadUserProfilePicture() {
         // Retrieve the user's profile picture URL from SharedPreferences
         SharedPreferences preferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);

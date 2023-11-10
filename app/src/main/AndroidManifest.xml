@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.BODY_SENSORS"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -15,10 +14,10 @@
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
-
-    <meta-data
-        android:name="com.google.android.gms.auth.GOOGLE_SIGN_IN"
-        android:value="1017355747558-f7211e8i7kd20uuodumbh9cs8gbup72n.apps.googleusercontent.com" />
+    <uses-permission android:name="android.permission.health.READ_HEART_RATE"/>
+    <uses-permission android:name="android.permission.health.WRITE_HEART_RATE"/>
+    <uses-permission android:name="android.permission.health.READ_STEPS"/>
+    <uses-permission android:name="android.permission.health.WRITE_STEPS"/>
 
     <application
         android:name=".appcomponents.di.MyApp"
@@ -41,6 +40,7 @@
         <activity android:name=".QuizLogic" />
         <activity android:name=".ScoreScreen" />
 
+
         <!-- Your MainActivity -->
         <activity
             android:name=".MainActivity"
@@ -48,6 +48,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" />
+
             </intent-filter>
         </activity>
 
@@ -59,7 +61,6 @@
             <intent-filter>
                 <action android:name="com.google.android.gms.auth.GOOGLE_SIGN_IN" />
                 <action android:name="com.google.android.gms.fitness.service.FitnessSensorService" />
-                <data android:mimeType="vnd.google.fitness.data_type/com.google.heart_rate.bpm" />
             </intent-filter>
         </service>
 

@@ -76,6 +76,7 @@ public class ProfileFragment extends Fragment {
                 // Create an Intent to start the GetStartedScreen activity
                 Intent intent = new Intent(requireContext(), GetStartedScreen.class);
                 startActivity(intent);
+
             }
         });
         loadUserProfilePicture();

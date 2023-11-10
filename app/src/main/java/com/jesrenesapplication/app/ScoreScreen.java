@@ -23,6 +23,7 @@ public class ScoreScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ScoreScreen.this, VoucherScreen.class);
                 startActivity(intent);
+
             }
         });
     }

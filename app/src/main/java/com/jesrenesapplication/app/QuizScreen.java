@@ -1,7 +1,6 @@
 package com.jesrenesapplication.app;
 
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import androidx.appcompat.app.AppCompatActivity; // Make sure to import AppCompatActivity
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -34,6 +32,7 @@ public class QuizScreen extends Fragment {
                 // Create an Intent to start the QuizLogic activity
                 Intent intent = new Intent(getActivity(), QuizLogic.class);
                 startActivity(intent);
+
             }
         });
 
@@ -61,6 +60,7 @@ public class QuizScreen extends Fragment {
 
                 // Commit the transaction
                 transaction.commit();
+
             }
         });
 

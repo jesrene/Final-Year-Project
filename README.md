@@ -6,7 +6,7 @@ Built with AndroidX Support | Requires Android Studio Arctic Fox | 2020.3.1 or h
 
 ### SDK Versions
 
-compileSdkVersion 33 | buildToolsVersion "30.0.3" | minSdkVersion 23 | targetSdkVersion 33
+compileSdkVersion 34 | buildToolsVersion "30.0.3" | minSdkVersion 26 | targetSdkVersion 34
 
 
 ### Figma Prototype 

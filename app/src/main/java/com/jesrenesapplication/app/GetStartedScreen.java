@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity; // Make sure to import AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class GetStartedScreen extends AppCompatActivity {
