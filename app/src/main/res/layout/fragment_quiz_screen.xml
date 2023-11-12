@@ -11,6 +11,18 @@
     style="@style/groupStylegray_50"
     android:background="@color/gray_50">
 
+    <ImageView
+        android:id="@+id/imageProfilePicture"
+        android:layout_width="@dimen/_70pxh"
+        android:layout_height="@dimen/_70pxh"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_310pxh"
+        android:layout_marginTop="@dimen/_40pxv"
+        android:layout_marginEnd="@dimen/_8pxh"
+        android:src="@drawable/img_profilepic"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/img_profilepic" />
+
     <LinearLayout
         android:id="@+id/backToRewards"
         android:layout_width="@dimen/_120pxh"
@@ -38,15 +50,7 @@
             android:textSize="@dimen/_12pxh" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageProfilepic"
-        android:layout_gravity="end"
-        android:layout_height="@dimen/_60pxh"
-        android:layout_marginStart="@dimen/_328pxh"
-        android:layout_marginTop="@dimen/_26pxh"
-        android:layout_width="@dimen/_70pxh"
-        android:src="@drawable/img_profilepic"
-        tools:ignore="ContentDescription" tools:src="@drawable/img_profilepic"/>
+
 
     <RelativeLayout
         android:layout_gravity="top|start"

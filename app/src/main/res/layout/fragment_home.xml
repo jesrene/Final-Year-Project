@@ -11,34 +11,54 @@
     android:background="@color/gray_50">
 
     <ImageView
-        android:id="@+id/imageProfilepic"
+        android:id="@+id/imageProfilePicture"
+        android:layout_width="@dimen/_70pxh"
+        android:layout_height="@dimen/_70pxh"
         android:layout_gravity="end"
-        android:layout_height="70dp"
-        android:layout_width="70dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="310dp"
+        android:layout_marginStart="@dimen/_310pxh"
+        android:layout_marginTop="@dimen/_40pxv"
+        android:layout_marginEnd="@dimen/_8pxh"
         android:src="@drawable/img_profilepic"
-      />
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/img_profilepic" />
 
-    <TextView android:gravity="start"
-        android:id="@+id/txtGoodEvening"
-        android:layout_width="fill_parent"
+<LinearLayout
+    android:gravity="start"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_60pxv">
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_60pxh"
-        android:layout_marginStart="@dimen/_20pxh"
-        android:layout_marginTop="@dimen/_75pxv"
+        android:layout_marginStart="@dimen/_30pxh"
+        android:layout_marginTop="@dimen/_30pxv"
         android:lineSpacingExtra="@dimen/_1pxh"
-        android:text="Good Evening, Song"
-        android:textSize="@dimen/_28pxh"
-        style="@style/txtWorkSansromansemibold32" />
+        android:ellipsize="end"
+        android:text="Good Evening,"
+        style="@style/txtWorkSansromanregular20"
+        android:textSize="@dimen/_30pxh"
+        android:textColor="@color/gray_500" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30pxh"
+        android:layout_marginTop="@dimen/_1pxv"
+        android:ellipsize="end"
+        android:text="@string/lbl_name"
+        style="@style/txtWorkSansromansemibold28"
+        android:textSize="@dimen/_30pxh"/>
+
     <TextView android:ellipsize="end"
         android:id="@+id/txtSummary"
         android:layout_gravity="start"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_10pxh"
-        android:layout_marginTop="@dimen/_130pxv"
-        android:layout_marginStart="@dimen/_20pxh"
+        android:layout_marginTop="@dimen/_40pxv"
+        android:layout_marginStart="@dimen/_30pxh"
         android:layout_width="wrap_content"
         android:lineSpacingExtra="@dimen/_5pxh"
         android:singleLine="true"
@@ -46,27 +66,51 @@
         android:text="Summary"
         android:textSize="@dimen/_24pxh"/>
 
+
     <LinearLayout android:gravity="start"
-        android:id="@+id/linearHeartrate"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15pxh"
-        android:layout_marginTop="@dimen/_580pxv"
+        android:layout_marginTop="@dimen/_25pxv"
         android:layout_width="@dimen/_350pxh"
-        android:layout_centerHorizontal="true"
         android:orientation="vertical"
         style="@style/groupStylecornerRadius"
-        android:background="@drawable/shadow">
+        android:layout_gravity="center"
+        android:background="@drawable/shadow_button">
 
-        <TextView android:ellipsize="end"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginStart="@dimen/_25pxh"
-            android:layout_marginTop="@dimen/_5pxh"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:singleLine="true"
-            android:text="HEART RATE"
-            style="@style/txtWorkSansromanregular20" />
+            android:layout_marginTop="5dp">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/heart_icon" />
+
+            <TextView
+                style="@style/txtWorkSansromanregular20"
+                android:textColor="@color/red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/_5pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_toEndOf="@+id/imageView"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/_4pxh"
+                android:singleLine="true"
+                android:shadowColor="#809E9E9E"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="4"
+                android:text="HEART RATE" />
+
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/heartRateTextView"
@@ -87,32 +131,62 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
+
     </LinearLayout>
 
 
-    <LinearLayout android:gravity="start"
+
+
+    <LinearLayout
+        android:layout_gravity="center"
         android:id="@+id/linearMentalstate"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15pxh"
-        android:layout_marginTop="@dimen/_350pxv"
+        android:layout_marginTop="@dimen/_25pxv"
         android:layout_width="@dimen/_350pxh"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
         style="@style/groupStylecornerRadius"
-        android:background="@drawable/shadow"
+        android:background="@drawable/shadow_button"
         >
 
-        <TextView android:ellipsize="end"
-            android:id="@+id/txtMentalstatehe"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginStart="@dimen/_25pxh"
-            android:layout_marginTop="@dimen/_5pxh"
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:singleLine="true"
-            android:text="MENTAL STATE"
-            style="@style/txtWorkSansromanregular20"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerVertical="true"
+               android:src="@drawable/mental_icon" />
+
+            <TextView
+                style="@style/txtWorkSansromanregular20"
+                android:textColor="@color/green"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/_5pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_toEndOf="@+id/imageView2"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/_4pxh"
+                android:singleLine="true"
+                android:text="MENTAL STATE"
+                android:shadowColor="#809E9E9E"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="4"
+            />
+
+        </RelativeLayout>
         <TextView
             android:id="@+id/textMentalState"
             android:layout_height="wrap_content"
@@ -129,18 +203,18 @@
 
 
 
-    <LinearLayout android:gravity="start"
+    <LinearLayout
+        android:layout_gravity="center"
         android:id="@+id/linearEda"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15pxh"
-        android:layout_marginTop="@dimen/_480pxv"
+        android:layout_marginTop="@dimen/_25pxv"
         android:layout_width="@dimen/_350pxh"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
         style="@style/groupStylecornerRadius"
-        android:background="@drawable/shadow">
-        <TextView android:ellipsize="end"
+        android:background="@drawable/shadow_button">
 
+        <TextView android:ellipsize="end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_10pxh"
@@ -162,5 +236,7 @@
             android:singleLine="true"
             android:textColorHint="@color/gray_901"/>
     </LinearLayout>
+
+</LinearLayout>
 
 </RelativeLayout>

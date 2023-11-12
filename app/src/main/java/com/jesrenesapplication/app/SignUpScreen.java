@@ -2,6 +2,7 @@ package com.jesrenesapplication.app;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,21 +26,22 @@ public class SignUpScreen extends AppCompatActivity {
 
     Button signUp;
     Button logIn;
-    ImageView imageProfilepic;
+    ImageView imageProfilePicture;
 
     LinearLayout signInWithGoogleButton;
     private GoogleSignInClient mGoogleSignInClient;
+    private MediaPlayer mediaPlayer;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen);
 
-        signUp = findViewById(R.id.btnSignUp);
-        logIn = findViewById(R.id.btnLogIn);
         signInWithGoogleButton = findViewById(R.id.btnSignInGoogle);
+        mediaPlayer = MediaPlayer.create(this, R.raw.zapsplat_technology_computer_mouse_single_click_001_63274); // Replace "your_sound_file" with the actual file name
 
-        imageProfilepic = findViewById(R.id.imageProfilepic);
 
 
         // Configure sign-in to request the user's ID, email address, and basic profile
@@ -51,25 +53,10 @@ public class SignUpScreen extends AppCompatActivity {
         // Build a GoogleSignInClient with the options specified by gso
         mGoogleSignInClient = GoogleSignIn.getClient(this, options);
 
-        signUp.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(SignUpScreen.this, CreateAccountScreen.class);
-                    startActivity(intent);
-                }
-            });
-
-            logIn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(SignUpScreen.this, LogInScreen.class);
-                    startActivity(intent);
-                }
-            });
-
             signInWithGoogleButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    playSound();
                     signOutAndSignInWithGoogle();
                     loadGoogleProfilePicture();
                 }
@@ -86,7 +73,7 @@ public class SignUpScreen extends AppCompatActivity {
 
             if (photoUri != null) {
                 // Use Picasso (or another image loading library) to load and display the image
-                Picasso.get().load(photoUri).into(imageProfilepic);
+                Picasso.get().load(photoUri).into(imageProfilePicture);
                 Log.d("ProfileImageDebug", "Loaded profile image: " + photoUri.toString());
             }
         }
@@ -161,6 +148,12 @@ public class SignUpScreen extends AppCompatActivity {
             startActivity(intent);
 
         }
+
+    private void playSound() {
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
+    }
 
 
     // Define the updateUI method

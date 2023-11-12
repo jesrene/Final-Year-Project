@@ -17,9 +17,7 @@ public class CreateAccountScreen extends AppCompatActivity {
     EditText fullNameEditText;
     EditText emailEditText;
     EditText passwordEditText;
-
     Button signUpButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

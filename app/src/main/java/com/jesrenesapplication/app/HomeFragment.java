@@ -26,13 +26,10 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.tensorflow.lite.Interpreter;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 public class HomeFragment extends Fragment {
-
-    private Interpreter tflite;
     private EditText heartRateInput;
     private Button predictButton;
     private TextView mentalStateText;
@@ -44,10 +41,16 @@ public class HomeFragment extends Fragment {
         String profilePic = preferences.getString("userPhotoUrl", "");
         Log.d("EditProfileFragment", "pic: " + profilePic);
 
+        String name = preferences.getString("userName", "");
+        Log.d("profile", "User Name: " + name);
+
+        TextView nameTextView = view.findViewById(R.id.txtName);
+        nameTextView.setText(name);
+
         // Retrieve the GoogleSignInAccount from the intent
         GoogleSignInAccount account = getActivity().getIntent().getParcelableExtra("googleSignInAccount");
 
-        ImageView imageProfilepic = view.findViewById(R.id.imageProfilepic);
+        ImageView imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
 
         if (account != null) {
             // Get the user's profile picture Uri
@@ -61,17 +64,21 @@ public class HomeFragment extends Fragment {
             if (photoUri != null) {
                 picasso.load(photoUri)
                         .transform(new CropCircleTransformation()) // Apply circular transformation
-                        .into(imageProfilepic);
+                        .into(imageProfilePicture);
                 Log.d("PhotoUri", photoUri.toString());
             } else {
                 // If photoUri is null, set a default image
-                imageProfilepic.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
+                imageProfilePicture.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
             }
         } else {
             // Handle the case where GoogleSignInAccount is null
             // You may want to display an error or take appropriate action.
         }
     }
+
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -87,7 +94,7 @@ public class HomeFragment extends Fragment {
         predictButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://my-json-feed" + heartRateInput.getText(); //todo
+                String url = "https://jesrenecheoy.pythonanywhere.com/?hr=" + heartRateInput.getText(); //todo
                 RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
@@ -97,7 +104,17 @@ public class HomeFragment extends Fragment {
                             public void onResponse(JSONObject response) {
                                 try {
                                     Log.d("response", response.getString("prediction"));
-                                    mentalStateText.setText("prediction is" + response.getString("prediction"));
+                                    int prediction = response.getInt("prediction");
+
+                                    if (prediction == 0) {
+                                        mentalStateText.setText("Non-stress");
+                                    } else if (prediction == 1) {
+                                        mentalStateText.setText("In Stress");
+                                    } else {
+                                        // Handle other prediction values if needed
+                                        mentalStateText.setText("Unknown prediction: " + prediction);
+                                    }
+
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -116,77 +133,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        return view; // Make sure to return the inflated view
+        return view;
     }
 }
 
-
-        // Load the TFLite model from the assets folder
-//        try {
-//            tflite = new Interpreter(loadModelFile(requireContext()));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-//        predictButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                try {
-//                    float heartRate = Float.parseFloat(heartRateInput.getText().toString());
-//
-//                    String prediction = predictStress(heartRate);
-//                    mentalStateText.setText(prediction);
-//                } catch (NumberFormatException e) {
-//                    mentalStateText.setText("Invalid input. Please enter a valid number.");
-//                }
-//            }
-//        }
-//        );
-//    return view;
-//    }
-
-    // Load the TFLite model from the assets folder
-//    private MappedByteBuffer loadModelFile(Context context) throws Exception {
-//        AssetFileDescriptor fileDescriptor;
-//        fileDescriptor = context.getAssets().openFd("knn_model_hr.tflite");
-//        FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
-//        FileChannel fileChannel = inputStream.getChannel();
-//        long startOffset = fileDescriptor.getStartOffset();
-//        long declaredLength = fileDescriptor.getDeclaredLength();
-//
-//        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
-//    }
-//
-//    // Perform KNN prediction using the TFLite model
-//    private String predictStress(float heartRate) {
-//        // Create a ByteBuffer to hold the input data
-//        ByteBuffer inputBuffer = ByteBuffer.allocateDirect(4); // 4 bytes for a single float
-//        inputBuffer.order(ByteOrder.nativeOrder());
-//
-//        // Copy the input data (float) into the ByteBuffer
-//        inputBuffer.putFloat(heartRate);
-//
-//        // Prepare the output buffer
-//        float[][] output = new float[1][1];
-//
-//        // Run inference
-//        tflite.run(inputBuffer, output);
-//
-//        // The result is in the output[0]
-//        float prediction = output[0][0];
-//
-//        // Perform some logic to convert the prediction to a string
-//        String predictionString = convertPredictionToString(prediction);
-//
-//        return predictionString;
-//    }
-//
-//    // Add your logic to convert the prediction value to a user-friendly string
-//    private String convertPredictionToString(float prediction) {
-//        if (prediction < 0.5) {
-//            return "Not in stress";
-//        } else {
-//            return "In stress";
-//        }
-//    }
-//}

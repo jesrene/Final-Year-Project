@@ -27,7 +27,7 @@ public class ProfileFragment extends Fragment {
 
     LinearLayout editProfile;
     Button logOutButton;
-    ImageView imageProfilepic;
+    ImageView imageProfilePicture;
 
     private Picasso picasso;
 
@@ -66,7 +66,7 @@ public class ProfileFragment extends Fragment {
 
         // Find the Log Out button by its ID within the fragment_profile.xml layout
         logOutButton = view.findViewById(R.id.btnLogOut);
-        imageProfilepic = view.findViewById(R.id.imageProfilepic);
+        imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
 
 
         // Set an OnClickListener to handle button clicks
@@ -109,10 +109,10 @@ public class ProfileFragment extends Fragment {
             Uri photoUri = Uri.parse(profilePic);
             picasso.load(photoUri)
                     .transform(new CropCircleTransformation()) // Apply circular transformation
-                    .into(imageProfilepic);
+                    .into(imageProfilePicture);
         } else {
             // If profilePic URL is empty, set a default image
-            imageProfilepic.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
+            imageProfilePicture.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
         }
     }
 }

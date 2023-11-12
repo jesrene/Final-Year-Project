@@ -9,6 +9,18 @@
     style="@style/groupStylegray_50"
     android:background="@color/gray_50">
 
+    <ImageView
+        android:id="@+id/imageProfilePicture"
+        android:layout_width="@dimen/_70pxh"
+        android:layout_height="@dimen/_60pxh"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_310pxh"
+        android:layout_marginTop="@dimen/_30pxv"
+        android:layout_marginEnd="@dimen/_8pxh"
+        android:src="@drawable/img_profilepic"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/img_profilepic" />
+
     <LinearLayout
         android:id="@+id/backToSummary"
         android:layout_width="match_parent"
@@ -36,30 +48,17 @@
             android:textSize="@dimen/_12pxh" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageProfilepic"
-        android:layout_width="@dimen/_70pxh"
-        android:layout_height="@dimen/_60pxh"
-        android:layout_gravity="end"
-        android:layout_marginStart="@dimen/_310pxh"
-        android:layout_marginTop="@dimen/_30pxv"
-        android:layout_marginEnd="@dimen/_8pxh"
-        android:src="@drawable/img_profilepic"
-        tools:ignore="ContentDescription"
-        tools:src="@drawable/img_profilepic" />
-
     <LinearLayout
-        android:id="@+id/linearColumnarrowleft"
         android:layout_width="match_parent"
         android:layout_height="791dp"
+        android:layout_below="@+id/backToSummary"
         android:layout_gravity="top|start"
-        android:layout_marginTop="@dimen/_50pxh"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="@dimen/_10pxv"
         android:orientation="vertical">
 
         <TextView
             style="@style/txtWorkSansromanregular20"
-            android:textColor="@color/gray_500"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20pxh"
@@ -68,7 +67,8 @@
             android:ellipsize="end"
             android:lineSpacingExtra="@dimen/_6pxh"
             android:singleLine="true"
-            android:text="@string/lbl_mental_state2" />
+            android:text="@string/lbl_mental_state2"
+            android:textColor="@color/gray_500" />
 
         <TextView
             android:id="@+id/txtMentalState"
@@ -105,13 +105,13 @@
 
             <LinearLayout
                 android:id="@+id/linearColumndescription"
+                style="@style/groupStylecornerRadius"
                 android:layout_width="@dimen/_370pxh"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_7pxv"
-                android:gravity="center_horizontal"
-                style="@style/groupStylecornerRadius"
-                android:background="@drawable/shadow">
+                android:background="@drawable/shadow"
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/txtDescription"

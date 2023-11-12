@@ -2,6 +2,7 @@ package com.jesrenesapplication.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.VideoView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -22,9 +24,17 @@ public class RewardsFragment extends Fragment {
     Button playGame;
     Button viewVoucher;
     private Picasso picasso;
-    ImageView imageProfilepic;
+    ImageView imageProfilePicture;
+    private VideoView videoView;
+
+    private MediaPlayer mediaPlayer;
 
 
+    private void playSound() {
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -32,11 +42,39 @@ public class RewardsFragment extends Fragment {
 
         // Find the btnPlayGame button by its ID within the fragment_rewards.xml layout
         playGame = view.findViewById(R.id.btnPlayGame);
+        mediaPlayer = MediaPlayer.create(requireContext(), R.raw.zapsplat_technology_computer_mouse_single_click_001_63274); // Replace "your_sound_file" with the actual file name
+        videoView = view.findViewById(R.id.videoView);
+
+
+        // Set the video path
+        String videoPath = "android.resource://" + "com.jesrenesapplication.app" + "/" + R.raw.trophy; // Replace with your video file
+
+        // Set the video URI
+        Uri videoUri = Uri.parse(videoPath);
+
+        // Set the video URI to the VideoView
+        videoView.setVideoURI(videoUri);
+
+        // Start the video
+        videoView.start();
+
+        // Set completion listener to loop the video
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                // Loop the video when it reaches the end
+                videoView.start();
+            }
+        });
+
+
 
         // Set an OnClickListener to handle button clicks
         playGame.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                playSound();
                 // Create an instance of the fragment you want to navigate to
                 QuizScreen quizScreen = new QuizScreen();
 
@@ -57,7 +95,7 @@ public class RewardsFragment extends Fragment {
             }
         });
 
-        imageProfilepic = view.findViewById(R.id.imageProfilepic);
+        imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
 
         // Find the btnViewVoucher button by its ID within the fragment_rewards.xml layout
         viewVoucher = view.findViewById(R.id.btnViewVoucher);
@@ -67,6 +105,7 @@ public class RewardsFragment extends Fragment {
         viewVoucher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                playSound();
                 // Create an instance of the fragment you want to navigate to
                 VoucherScreen voucherScreen = new VoucherScreen();
 
@@ -106,11 +145,13 @@ public class RewardsFragment extends Fragment {
             Uri photoUri = Uri.parse(profilePic);
             picasso.load(photoUri)
                     .transform(new CropCircleTransformation()) // Apply circular transformation
-                    .into(imageProfilepic);
+                    .into(imageProfilePicture);
         } else {
             // If profilePic URL is empty, set a default image
-            imageProfilepic.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
+            imageProfilePicture.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
         }
     }
+
+
 }
 

@@ -96,7 +96,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageProfilepic"
+        android:id="@+id/imageProfilePicture"
         android:layout_width="@dimen/_70pxh"
         android:layout_height="@dimen/_60pxh"
         android:layout_gravity="end"
