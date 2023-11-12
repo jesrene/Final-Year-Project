@@ -11,9 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -77,8 +80,6 @@ public class HomeFragment extends Fragment {
     }
 
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -90,6 +91,32 @@ public class HomeFragment extends Fragment {
         heartRateInput = view.findViewById(R.id.heartRateTextView);
         predictButton = view.findViewById(R.id.button);
         mentalStateText = view.findViewById(R.id.textMentalState);
+        // Find the LinearLayout for the mental state
+        LinearLayout mentalStateLayout = view.findViewById(R.id.mentalStateDetails);
+
+        // Set an OnClickListener to navigate to MentalStateDetails fragment
+        mentalStateLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an instance of the fragment you want to navigate to
+                MentalStateDetails mentalStateDetails = new MentalStateDetails();
+
+                // Get the FragmentManager
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+                // Start a FragmentTransaction
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+                // Replace the current fragment with the new one
+                transaction.replace(R.id.container, mentalStateDetails);
+
+                // Add the transaction to the back stack (optional)
+                transaction.addToBackStack(null);
+
+                // Commit the transaction
+                transaction.commit();
+            }
+        });
 
         predictButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +135,8 @@ public class HomeFragment extends Fragment {
 
                                     if (prediction == 0) {
                                         mentalStateText.setText("Non-stress");
+
+
                                     } else if (prediction == 1) {
                                         mentalStateText.setText("In Stress");
                                     } else {

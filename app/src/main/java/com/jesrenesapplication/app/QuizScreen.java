@@ -39,13 +39,14 @@ public class QuizScreen extends Fragment {
         // Find the btnImReady button by its ID within the fragment_quiz_screen.xml layout
         imReady = view.findViewById(R.id.btnImReady);
         imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
-        mediaPlayer = MediaPlayer.create(requireContext(), R.raw.zapsplat_technology_computer_mouse_single_click_001_63274); // Replace "your_sound_file" with the actual file name
+        mediaPlayer = MediaPlayer.create(requireContext(), R.raw.zapsplat_technology_computer_mouse_single_click_001_63274);
 
 
         // Set an OnClickListener to handle button clicks
         imReady.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                playSound();
                 // Create an Intent to start the QuizLogic activity
                 Intent intent = new Intent(getActivity(), QuizLogic.class);
                 startActivity(intent);
@@ -63,8 +64,6 @@ public class QuizScreen extends Fragment {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                playSound();
-
                 // Create an instance of the fragment you want to navigate to
                 RewardsFragment rewardsFragment = new RewardsFragment();
 

@@ -114,7 +114,7 @@
                 android:gravity="center_horizontal">
 
                 <TextView
-                    android:id="@+id/txtDescription"
+                    android:id="@+id/txtAbout"
                     style="@style/txtWorkSansromanregular15"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -153,7 +153,7 @@
             android:gravity="center_horizontal">
 
             <TextView
-                android:id="@+id/txtDescriptionOne"
+                android:id="@+id/txtForYou"
                 style="@style/txtWorkSansromanregular15"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_330pxh"

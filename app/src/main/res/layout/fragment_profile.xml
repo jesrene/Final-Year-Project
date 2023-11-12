@@ -14,7 +14,7 @@
         android:id="@+id/linearProfile"
         android:layout_width="300dp"
         android:layout_height="280dp"
-        android:layout_marginTop="@dimen/_40pxh"
+        android:layout_marginTop="@dimen/_60pxh"
         android:layout_centerHorizontal="true"
         android:orientation="vertical" style="@style/groupStylecornerRadius_1">
 
@@ -34,7 +34,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageProfilePicture"
             android:layout_marginTop="10dp"
-            android:doubleLine="true"
             android:layout_centerHorizontal="true"
             android:lineSpacingExtra="@dimen/_6pxh"
             android:text="Song Yu Qi" />

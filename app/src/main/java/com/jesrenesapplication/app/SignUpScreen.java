@@ -40,7 +40,7 @@ public class SignUpScreen extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_screen);
 
         signInWithGoogleButton = findViewById(R.id.btnSignInGoogle);
-        mediaPlayer = MediaPlayer.create(this, R.raw.zapsplat_technology_computer_mouse_single_click_001_63274); // Replace "your_sound_file" with the actual file name
+        mediaPlayer = MediaPlayer.create(this, R.raw.zapsplat_multimedia_button_click_bright_003_92100); // Replace "your_sound_file" with the actual file name
 
 
 

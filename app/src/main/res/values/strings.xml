@@ -120,4 +120,9 @@ Social Connections: Spend time with friends and loved ones who provide emotional
     YOUR_WEB_CLIENT_ID
 </string>
 
+    <string name="nonStress">Non-stress</string>
+    <string name="nonStressAbout">Experiencing a sense of calm and tranquility is a wonderful state of being. When you're not under stress, your mind and body can function optimally, allowing you to embrace life fully.</string>
+    <string name="nonStressForYou">While you're in a state of non-stress, it's a perfect time to enhance your well-being with these daily strategies: \n Connect with Positivity: Surround yourself with positive influences. Engage with activities and people who uplift your spirits and contribute to a positive environment. Positive connections can be a powerful antidote to stress.</string>
+
+
 </resources>

@@ -57,12 +57,4 @@ public class GetStartedScreen extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
-    }
 }

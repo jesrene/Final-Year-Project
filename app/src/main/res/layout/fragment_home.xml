@@ -138,8 +138,8 @@
 
 
     <LinearLayout
+        android:id="@+id/mentalStateDetails"
         android:layout_gravity="center"
-        android:id="@+id/linearMentalstate"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_25pxv"
         android:layout_width="@dimen/_350pxh"
