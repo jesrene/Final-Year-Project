@@ -1,17 +1,14 @@
 package com.jesrenesapplication.app;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,11 +16,17 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.squareup.picasso.Picasso;
+
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
+
 public class EditProfile extends Fragment {
     private static final int GALLERY_REQUEST_CODE = 1;
 
     LinearLayout backButton;
-    FrameLayout uploadPhoto;
+    ImageView imageProfilePicture;
+    private Picasso picasso;
+
 
     private void setUserDetails(View view) {
         // Retrieve the user's email from the arguments
@@ -48,12 +51,12 @@ public class EditProfile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_edit_profile, container, false);
+        View view = inflater.inflate(R.layout.screen9_edit_profile, container, false);
         setUserDetails(view);
 
         backButton = view.findViewById(R.id.backToProfile);
+        imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
 
-        uploadPhoto = view.findViewById(R.id.frameUploadphoto);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,30 +80,29 @@ public class EditProfile extends Fragment {
                 transaction.commit();
             }
         });
-
-        uploadPhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openGallery();
-            }
-        });
-
+        loadUserProfilePicture();
         return view;
     }
 
-    private void openGallery() {
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(galleryIntent, GALLERY_REQUEST_CODE);
-    }
+    private void loadUserProfilePicture() {
+        // Retrieve the user's profile picture URL from SharedPreferences
+        SharedPreferences preferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        String profilePic = preferences.getString("userPhotoUrl", "");
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        // Initialize Picasso (if not already initialized)
+        if (picasso == null) {
+            picasso = new Picasso.Builder(requireContext()).build();
+        }
 
-        if (requestCode == GALLERY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            Uri selectedImageUri = data.getData();
-            // Now, you can use the selectedImageUri to work with the selected image.
-            // You might want to display it in an ImageView or perform further processing.
+        if (!profilePic.isEmpty()) {
+            Uri photoUri = Uri.parse(profilePic);
+            picasso.load(photoUri)
+                    .transform(new CropCircleTransformation()) // Apply circular transformation
+                    .into(imageProfilePicture);
+        } else {
+            // If profilePic URL is empty, set a default image
+            imageProfilePicture.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
         }
     }
 }
+

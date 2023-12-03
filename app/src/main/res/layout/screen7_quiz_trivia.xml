@@ -13,7 +13,7 @@
     <ImageView
         android:id="@+id/imageProfilePicture"
         android:layout_width="@dimen/_70pxh"
-        android:layout_height="@dimen/_60pxh"
+        android:layout_height="@dimen/_70pxh"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_310pxh"
         android:layout_marginTop="@dimen/_30pxv"

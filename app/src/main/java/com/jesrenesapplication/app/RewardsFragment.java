@@ -22,7 +22,6 @@ import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 public class RewardsFragment extends Fragment {
     Button playGame;
-    Button viewVoucher;
     private Picasso picasso;
     ImageView imageProfilePicture;
     private VideoView videoView;
@@ -38,13 +37,13 @@ public class RewardsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_rewards, container, false);
+        View view = inflater.inflate(R.layout.screen5_quiz, container, false);
 
         // Find the btnPlayGame button by its ID within the fragment_rewards.xml layout
         playGame = view.findViewById(R.id.btnPlayGame);
         mediaPlayer = MediaPlayer.create(requireContext(), R.raw.zapsplat_technology_computer_mouse_single_click_001_63274); // Replace "your_sound_file" with the actual file name
         videoView = view.findViewById(R.id.videoView);
-
+        imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
 
         // Set the video path
         String videoPath = "android.resource://" + "com.jesrenesapplication.app" + "/" + R.raw.trophy; // Replace with your video file
@@ -68,7 +67,6 @@ public class RewardsFragment extends Fragment {
         });
 
 
-
         // Set an OnClickListener to handle button clicks
         playGame.setOnClickListener(new View.OnClickListener() {
 
@@ -86,37 +84,6 @@ public class RewardsFragment extends Fragment {
 
                 // Replace the current fragment with the new one
                 transaction.replace(R.id.container, quizScreen);
-
-                // Add the transaction to the back stack (optional)
-                transaction.addToBackStack(null);
-
-                // Commit the transaction
-                transaction.commit();
-            }
-        });
-
-        imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
-
-        // Find the btnViewVoucher button by its ID within the fragment_rewards.xml layout
-        viewVoucher = view.findViewById(R.id.btnViewVoucher);
-
-
-        // Set an OnClickListener to handle button clicks
-        viewVoucher.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playSound();
-                // Create an instance of the fragment you want to navigate to
-                VoucherScreen voucherScreen = new VoucherScreen();
-
-                // Get the FragmentManager
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-
-                // Start a FragmentTransaction
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-                // Replace the current fragment with the new one
-                transaction.replace(R.id.container, voucherScreen);
 
                 // Add the transaction to the back stack (optional)
                 transaction.addToBackStack(null);
@@ -151,7 +118,4 @@ public class RewardsFragment extends Fragment {
             imageProfilePicture.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
         }
     }
-
-
 }
-

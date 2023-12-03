@@ -2,6 +2,7 @@ package com.jesrenesapplication.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -84,7 +85,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.screen3_home, container, false);
 
         setUserDetails(view);
         // Initialize UI elements
@@ -98,8 +99,12 @@ public class HomeFragment extends Fragment {
         mentalStateLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an instance of the fragment you want to navigate to
                 MentalStateDetails mentalStateDetails = new MentalStateDetails();
+
+                // Pass stress information to MentalStateDetails
+                Bundle args = new Bundle();
+                args.putBoolean("isStressed", mentalStateText.getText().toString().equals("In Stress"));
+                mentalStateDetails.setArguments(args);
 
                 // Get the FragmentManager
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -135,10 +140,11 @@ public class HomeFragment extends Fragment {
 
                                     if (prediction == 0) {
                                         mentalStateText.setText("Non-stress");
-
+                                        mentalStateText.setTextColor(Color.BLACK);
 
                                     } else if (prediction == 1) {
                                         mentalStateText.setText("In Stress");
+                                        mentalStateText.setTextColor(Color.RED);
                                     } else {
                                         // Handle other prediction values if needed
                                         mentalStateText.setText("Unknown prediction: " + prediction);
@@ -149,11 +155,11 @@ public class HomeFragment extends Fragment {
                                 }
                             }
                         }, new Response.ErrorListener() {
-
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 Log.d("response", ("received the error"));
-                                mentalStateText.setText("that didnt work out, check problem");
+                                mentalStateText.setText("ERROR. Enter integers.");
+                                mentalStateText.setTextColor(Color.RED);
                             }
                         });
                 // Add the request to the RequestQueue

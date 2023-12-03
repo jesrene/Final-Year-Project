@@ -96,16 +96,7 @@ fun loadImageFromNetwork(
 fun loadImageFromResource(
     imageView: ImageView, imageRes: Drawable?, cornerRadius: Float, circular: Boolean
 ) {
-    if (imageRes == null) {
-        imageView.setImageResource(R.drawable.image_not_found)
-    } else {
-        val options = RequestOptions()
-        if (circular)
-            options.circleCrop()
-        if (cornerRadius > 0)
-            options.transform(CenterCrop(),RoundedCorners(cornerRadius.toInt()))
-        Glide.with(imageView).load(imageRes).apply(options).into(imageView)
-    }
+
 }
 
 /**

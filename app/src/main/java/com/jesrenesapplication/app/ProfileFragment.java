@@ -35,7 +35,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.screen8_profile, container, false);
 
         // Find the EditProfile button by its ID within the fragment_profile.xml layout
         editProfile = view.findViewById(R.id.EditProfile);

@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="app_name">jesrene_s_application3</string>
-    <string name="loading">Loading…</string>
-    <string name="no_internet_connection">No internet connection!</string>
+    <string name="app_name">Fleez</string>
     <string name="lbl_energy">Energy</string>
     <string name="lbl_height">HEIGHT</string>
     <string name="lbl_song_yu_qi">Song Yu Qi</string>
     <string name="lbl_voucher">Voucher</string>
-    <string name="msg_valid_until_19">Valid until 19 June 2024</string>
-    <string name="lbl_full_name2">FULL NAME</string>
-    <string name="msg_you_can_t_avoid2">You can\u2019t avoid stresng some daily strategies:</string>
-    <string name="msg_accelerometer_d">ACCELEROMETER DATA</string>
     <string name="lbl_i_m_ready">I\u2019m Ready!</string>
-    <string name="lbl2">\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022</string>
     <string name="lbl_about">About</string>
     <string name="lbl_home">Home</string>
     <string name="lbl_date_of_birth">DATE OF BIRTH</string>
@@ -24,105 +17,39 @@
     <string name="msg_information_sni">Information Snippet</string>
     <string name="msg_valid_until_29">Valid until 29 September 2024</string>
     <string name="lbl_features">Features</string>
-    <string name="lbl_snippet_1">SNIPPET 1</string>
     <string name="lbl_snippet_2">SNIPPET 2</string>
     <string name="msg_increase_appeti">Increase Appetite</string>
     <string name="msg_sign_in_with_go">Sign In with Google</string>
     <string name="lbl_edit_profile">Edit Profile</string>
     <string name="lbl_rewards">Rewards</string>
-    <string name="msg_valid_until_31">Valid until 31 May 2024</string>
-    <string name="lbl_30_s">30 µS</string>
+    <string name="msg_take_the_first">Take the first step with Fleez. </string>
     <string name="lbl_carbon_dioxide">Carbon Dioxide</string>
     <string name="lbl_gender">GENDER</string>
     <string name="lbl_weight">WEIGHT</string>
     <string name="lbl_summary">Summary</string>
-    <string name="msg_physical_acti">: Physical activity is aifters. Regular exercise can also improve your overall resilience to stress.</string>
-    <string name="lbl_view_vouchers">View Vouchers</string>
-    <string name="msg_victory_points">Victory Points: 200</string>
     <string name="lbl_protein">Protein</string>
-    <string name="lbl_2_2">2/2</string>
-    <string name="msg_it_takes_t">It takes ____ to keep your mind alert.</string>
-    <string name="lbl_password">PASSWORD</string>
-    <string name="msg_to_keep_your_mi">To keep your mind alert, it requires energy. Energy is necessary for the brain to function properly and carry out cognitive processes such as thinking, analyzing, and problem-solving.</string>
-    <string name="lbl_4002_steps">4002 steps</string>
-    <string name="lbl_40_kg">40 kg</string>
-    <string name="txt_goodEvening">Good Evening, Song</string>
-    <string name="lbl_personal_data">Personal Data</string>
-    <string name="lbl_120_bpm">120 bpm</string>
     <string name="lbl_account">Account</string>
-    <string name="msg">---------------------</string>
     <string name="lbl_for_you">For You</string>
-    <string name="msg_electrodermal_a">ELECTRODERMAL ACTIVITY</string>
     <string name="lbl_mental_state">MENTAL STATE</string>
     <string name="lbl_joined_in_2023">Joined in 2023</string>
     <string name="lbl_yuqii_gmail_com">yuqii@gmail.com</string>
     <string name="lbl_you_have_scored">You have scored</string>
-    <string name="msg_previous_questi">Previous Question</string>
-    <string name="msg_please_sign_in">Please sign in to continue.</string>
-    <string name="msg_take_the_first">Take the first step with Fleez. </string>
-    <string name="msg_upload_your_ph">Upload your photo</string>
-    <string name="lbl_jun_10_1996">Jun 10, 1996</string>
-    <string name="paperfish">50% OFF Paperfish</string>
-    <string name="lbl_female">Female</string>
-    <string name="lbl_150_cm">150 cm</string>
     <string name="lbl_log_in">Log In</string>
     <string name="lbl_create_account">Create Account </string>
-    <string name="msg_stress_is_a_nor">Stress is a normal human reaction that happens to everyone. In fact, the human body is designed to experience stress and react to it. When you experience changes or challenges (stressors), your body produces physical and mental responses.</string>
-    <string name="msg_spend_time_wi">: Spend time with friends and loved ones who provide emotional support and understanding. </string>
-    <string name="msg_please_fill_in">Please fill in the required fields.</string>
     <string name="lbl_login2">Login</string>
     <string name="lbl_get_started">Get Started!</string>
     <string name="lbl_sign_up">Sign Up</string>
-    <string name="msg_when_a_person_h">When a person has long-term (chronic) stress, continued activation of the stress response causes wear and tear on the body. Physical, emotional and behavioral symptoms develop.
-
-Physical symptoms of stress include: aches and pains, chest pain or a feeling like your heart is racing, exhaustion or trouble sleeping, headaches, muscle tension or jaw clenching, stomach or digestive problems. </string>
-    <string name="msg_regular_exercis">Regular Exercise</string>
     <string name="lbl_name">NAME</string>
-    <string name="msg_which_of_the_fo">Which of the following is a symptom of stress?</string>
     <string name="lbl_profile">Profile</string>
-    <string name="lbl">********</string>
-    <string name="lbl_dry_skin">Dry Skin</string>
-    <string name="msg_congratulations">Congratulations, Song!</string>
     <string name="lbl_done">Done!</string>
     <string name="lbl_vitamins">Vitamins</string>
     <string name="lbl_play_game">PlayGame</string>
     <string name="lbl_email">EMAIL</string>
-    <string name="msg_you_ve_earned_3">You\u2019ve earned 2 Victory Points!</string>
     <string name="lbl_quiz_trivia">Quiz Trivia!</string>
     <string name="lbl_next_question">Next Question</string>
-    <string name="msg_1_free_juice_ku">1 Free JuiceKubis &amp; Kale</string>
     <string name="lbl_step_count">STEP COUNT</string>
     <string name="lbl_voucher_2">Voucher: 2</string>
     <string name="lbl_1_2">1/2</string>
-    <string name="lbl_60_m_s2">60 M/s2</string>
-    <string name="msg_improved_sleep">Improved Sleep Quality</string>
     <string name="lbl_sign_in2">Sign In</string>
-    <string name="lbl_notification">Notification</string>
-    <string name="msg_you_can_t_avoid">You can’t avoid stress, but you can stop it from becoming overwhelming by practicing some daily strategies:
-
-Regular Exercise: Physical activity is a powerful stress reliever. When you feel stress creeping in, taking a break for a short walk, jog, or even a few minutes of stretching can help release endorphins, which are natural mood lifters. Regular exercise can also improve your overall resilience to stress.
-
-Social Connections: Spend time with friends and loved ones who provide emotional support and understanding. Social connections can buffer the effects of stress and improve your mood.
-</string>
-    <string name="lbl_yukii_gmail_com">yukii@gmail.com</string>
-    <string name="msg_settings_and_pr">Settings and Privacy</string>
-    <string name="lbl_rapid_heartbeat">Rapid Heartbeat</string>
-    <string name="msg_50_off_the_fis">50% OFF</string>
-    <string name="lbl_heart_rate">HEART RATE</string>
-    <string name="lbl_full_name">FULL NAME</string>
-    <string name="msg_please_enter_valid_pa">Please enter valid password</string>
-    <string name="msg_please_enter_valid_email">Please enter valid email</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="playGame">Play\nGame</string>
-    <string name="viewVouchers">View\nVouchers</string>
-    <string name="google_sign_in_metadata">
-    YOUR_WEB_CLIENT_ID
-</string>
-
-    <string name="nonStress">Non-stress</string>
-    <string name="nonStressAbout">Experiencing a sense of calm and tranquility is a wonderful state of being. When you're not under stress, your mind and body can function optimally, allowing you to embrace life fully.</string>
-    <string name="nonStressForYou">While you're in a state of non-stress, it's a perfect time to enhance your well-being with these daily strategies: \n Connect with Positivity: Surround yourself with positive influences. Engage with activities and people who uplift your spirits and contribute to a positive environment. Positive connections can be a powerful antidote to stress.</string>
-
-
 </resources>

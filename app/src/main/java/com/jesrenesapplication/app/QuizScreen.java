@@ -34,12 +34,14 @@ public class QuizScreen extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_quiz_screen, container, false);
+        View view = inflater.inflate(R.layout.screen6_information_snippet, container, false);
 
         // Find the btnImReady button by its ID within the fragment_quiz_screen.xml layout
         imReady = view.findViewById(R.id.btnImReady);
         imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
         mediaPlayer = MediaPlayer.create(requireContext(), R.raw.zapsplat_technology_computer_mouse_single_click_001_63274);
+
+
 
 
         // Set an OnClickListener to handle button clicks

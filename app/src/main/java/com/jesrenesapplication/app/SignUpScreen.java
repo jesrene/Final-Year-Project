@@ -32,17 +32,13 @@ public class SignUpScreen extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private MediaPlayer mediaPlayer;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_screen);
+        setContentView(R.layout.screen2_sign_in);
 
         signInWithGoogleButton = findViewById(R.id.btnSignInGoogle);
-        mediaPlayer = MediaPlayer.create(this, R.raw.zapsplat_multimedia_button_click_bright_003_92100); // Replace "your_sound_file" with the actual file name
-
-
+        mediaPlayer = MediaPlayer.create(this, R.raw.zapsplat_technology_computer_mouse_single_click_001_63274);
 
         // Configure sign-in to request the user's ID, email address, and basic profile
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

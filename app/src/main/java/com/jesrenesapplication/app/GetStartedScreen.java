@@ -19,7 +19,7 @@ public class GetStartedScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_started_screen);
+        setContentView(R.layout.screen1_get_started);
 
         getStarted = findViewById(R.id.btnGetStarted);
         mediaPlayer = MediaPlayer.create(this, R.raw.zapsplat_technology_computer_mouse_single_click_001_63274);

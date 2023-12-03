@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/imageProfilePicture"
         android:layout_width="@dimen/_70pxh"
-        android:layout_height="@dimen/_60pxh"
+        android:layout_height="@dimen/_70pxh"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_310pxh"
         android:layout_marginTop="@dimen/_30pxv"
@@ -49,20 +49,21 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/aboutLayout"
         android:layout_width="match_parent"
-        android:layout_height="791dp"
+        android:layout_height="@dimen/_80pxh"
         android:layout_below="@+id/backToSummary"
         android:layout_gravity="top|start"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="@dimen/_10pxv"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/txtTitle"
             style="@style/txtWorkSansromanregular20"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20pxh"
-            android:layout_marginTop="@dimen/_12pxv"
+            android:layout_marginTop="@dimen/_5pxv"
             android:layout_marginEnd="@dimen/_10pxh"
             android:ellipsize="end"
             android:lineSpacingExtra="@dimen/_6pxh"
@@ -81,94 +82,101 @@
             android:lineSpacingExtra="@dimen/_6pxh"
             android:singleLine="true"
             android:text="@string/lbl_stressed" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutLayout"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal">
 
         <LinearLayout
-            android:id="@+id/linearMentallstatea"
-            style="@style/groupStylecornerRadius"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_22pxv"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:id="@+id/linearMentallstatea"
+                style="@style/groupStylecornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txtWorkSansromansemibold32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_25pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_6pxh"
+                    android:singleLine="true"
+                    android:text="@string/lbl_about" />
+
+                <LinearLayout
+                    android:id="@+id/linearColumndescription"
+                    style="@style/groupStylecornerRadius"
+                    android:layout_width="@dimen/_370pxh"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_7pxv"
+                    android:background="@drawable/shadow"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/txtAbout"
+                        style="@style/txtWorkSansromanregular15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_7pxh"
+                        android:layout_marginTop="@dimen/_3pxv"
+                        android:layout_marginEnd="@dimen/_7pxh"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:lineSpacingExtra="@dimen/_3pxh"
+                        android:padding="@dimen/_10pxh" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
             <TextView
-                android:id="@+id/txtAbout"
                 style="@style/txtWorkSansromansemibold32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginStart="@dimen/_25pxh"
-                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_20pxh"
                 android:ellipsize="end"
                 android:lineSpacingExtra="@dimen/_6pxh"
                 android:singleLine="true"
-                android:text="@string/lbl_about" />
+                android:text="@string/lbl_for_you" />
 
             <LinearLayout
-                android:id="@+id/linearColumndescription"
-                style="@style/groupStylecornerRadius"
+                android:id="@+id/linearColumndescriptionOne"
+                style="@style/groupStylewhite_1"
                 android:layout_width="@dimen/_370pxh"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_7pxv"
+                android:layout_marginBottom="@dimen/_25pxh"
                 android:background="@drawable/shadow"
                 android:gravity="center_horizontal">
 
                 <TextView
-                    android:id="@+id/txtAbout"
+                    android:id="@+id/txtForYou"
                     style="@style/txtWorkSansromanregular15"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_7pxh"
-                    android:layout_marginTop="@dimen/_3pxv"
-                    android:layout_marginEnd="@dimen/_7pxh"
-                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginTop="@dimen/_7pxv"
+                    android:layout_marginEnd="@dimen/_6pxh"
+                    android:layout_marginBottom="@dimen/_8pxv"
                     android:lineSpacingExtra="@dimen/_3pxh"
-                    android:padding="@dimen/_10pxh"
-                    android:text="@string/msg_stress_is_a_nor" />
-
+                    android:padding="@dimen/_10pxh" />
             </LinearLayout>
-
         </LinearLayout>
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/txtForYou"
-            style="@style/txtWorkSansromansemibold32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="@dimen/_25pxh"
-            android:layout_marginTop="@dimen/_20pxh"
-            android:ellipsize="end"
-            android:lineSpacingExtra="@dimen/_6pxh"
-            android:singleLine="true"
-            android:text="@string/lbl_for_you" />
-
-        <LinearLayout
-            android:id="@+id/linearColumndescriptionOne"
-            style="@style/groupStylewhite_1"
-            android:layout_width="@dimen/_370pxh"
-            android:layout_height="@dimen/_340pxh"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_7pxv"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/txtForYou"
-                style="@style/txtWorkSansromanregular15"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_330pxh"
-                android:layout_marginStart="@dimen/_7pxh"
-                android:layout_marginTop="@dimen/_7pxv"
-                android:layout_marginEnd="@dimen/_6pxh"
-                android:layout_marginBottom="@dimen/_8pxv"
-                android:lineSpacingExtra="@dimen/_3pxh"
-                android:padding="@dimen/_10pxh"
-
-                android:text="You can’t avoid stress, but you can stop it from becoming overwhelming by practicing some daily strategies:
-
-Regular Exercise: Physical activity is a powerful stress reliever. When you feel stress creeping in, taking a break for a short walk, jog, or even a few minutes of stretching can help release endorphins, which are natural mood lifters. Regular exercise can also improve your overall resilience to stress.
-
-Social Connections: Spend time with friends and loved ones who provide emotional support and understanding. Social connections can buffer the effects of stress and improve your mood." />
-        </LinearLayout>
-    </LinearLayout>
 </RelativeLayout>

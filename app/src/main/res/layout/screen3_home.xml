@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -52,24 +53,32 @@
         style="@style/txtWorkSansromansemibold28"
         android:textSize="@dimen/_30pxh"/>
 
-    <TextView android:ellipsize="end"
-        android:id="@+id/txtSummary"
-        android:layout_gravity="start"
+    <TextView
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_10pxh"
-        android:layout_marginTop="@dimen/_40pxv"
         android:layout_marginStart="@dimen/_30pxh"
-        android:layout_width="wrap_content"
-        android:lineSpacingExtra="@dimen/_5pxh"
-        android:singleLine="true"
+        android:layout_marginTop="@dimen/_40pxv"
+        android:ellipsize="end"
+        android:text="Stress Detection"
         style="@style/txtWorkSansromansemibold28"
-        android:text="Summary"
-        android:textSize="@dimen/_24pxh"/>
+        android:textSize="@dimen/_30pxh"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30pxh"
+        android:lineSpacingExtra="@dimen/_1pxh"
+        android:ellipsize="end"
+        android:text="Spot stress with your heart rate!"
+        style="@style/txtWorkSansromanregular20"
+        android:textSize="@dimen/_18pxh"
+        android:textColor="@color/gray_500" />
+
+
 
 
     <LinearLayout android:gravity="start"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_25pxv"
+        android:layout_marginTop="@dimen/_40pxv"
         android:layout_width="@dimen/_350pxh"
         android:orientation="vertical"
         style="@style/groupStylecornerRadius"
@@ -95,6 +104,7 @@
             <TextView
                 style="@style/txtWorkSansromanregular20"
                 android:textColor="@color/red"
+                android:textSize="@dimen/_23pxh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -114,34 +124,55 @@
 
         <EditText
             android:id="@+id/heartRateTextView"
-            android:hint="Enter heart rate"
+            style="@style/txtWorkSansromanmedium20"
+            android:layout_width="269dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5pxv"
-            android:layout_marginBottom="@dimen/_10pxh"
             android:layout_marginStart="@dimen/_30pxh"
-            android:paddingBottom="@dimen/_10pxh"
-            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_5pxv"
+            android:layout_marginBottom="@dimen/_20pxh"
+            android:hint="Input heart rate (BPM)"
             android:lineSpacingExtra="@dimen/_4pxh"
-            style="@style/txtWorkSansromanmedium20_1"
+            android:paddingBottom="@dimen/_10pxh"
             android:singleLine="true"
-            android:textColorHint="@color/gray_901"/>
+            android:textColorHint="@color/gray_500"
+            android:textSize="@dimen/_20pxh" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
 
     </LinearLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="@dimen/_25pxh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            android:text="Am I In Stress?"
+            android:textAllCaps="false"
+            android:layout_width="@dimen/_240pxh"
+            android:layout_height="@dimen/_70pxh"
+            android:shadowColor="#809E9E9E"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="4"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            style="@style/txtWorkSansromanmedium20_1"
+            android:background="@drawable/shadow_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <LinearLayout
         android:id="@+id/mentalStateDetails"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_25pxv"
+        android:layout_marginTop="@dimen/_40pxv"
         android:layout_width="@dimen/_350pxh"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
@@ -169,6 +200,7 @@
             <TextView
                 style="@style/txtWorkSansromanregular20"
                 android:textColor="@color/green"
+                android:textSize="23dp"
                 android:layout_centerVertical="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,51 +223,35 @@
             android:id="@+id/textMentalState"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5pxv"
-            android:layout_marginStart="@dimen/_30pxh"
-            android:paddingBottom="@dimen/_10pxh"
+            android:layout_marginStart="@dimen/_45pxh"
+            android:layout_marginBottom="@dimen/_10pxh"
             android:layout_width="match_parent"
             android:lineSpacingExtra="@dimen/_4pxh"
             android:text="Please input your heart rate"
             style="@style/txtWorkSansromanmedium20_1"
+            android:textSize="@dimen/_20pxh"
+            android:textColor="@color/gray_500"
             android:singleLine="true"
             android:textColorHint="@color/gray_901" />
-    </LinearLayout>
 
-
-
-    <LinearLayout
-        android:layout_gravity="center"
-        android:id="@+id/linearEda"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_25pxv"
-        android:layout_width="@dimen/_350pxh"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        style="@style/groupStylecornerRadius"
-        android:background="@drawable/shadow_button">
-
-        <TextView android:ellipsize="end"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginStart="@dimen/_25pxh"
-            android:layout_marginTop="@dimen/_5pxh"
-            android:lineSpacingExtra="@dimen/_4pxh"
-            android:text="ELETRODERMAL ACTIVITY"
-            style="@style/txtWorkSansromanregular20" />
         <TextView
-            android:id="@+id/edaTextView"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5pxv"
-            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_240pxh"
             android:paddingBottom="@dimen/_10pxh"
             android:layout_width="match_parent"
             android:lineSpacingExtra="@dimen/_4pxh"
-            android:text="@string/lbl_30_s"
+            android:text="Learn more >"
             style="@style/txtWorkSansromanmedium20_1"
+            android:textSize="@dimen/_15pxh"
+            android:textColor="@color/gray_500"
             android:singleLine="true"
-            android:textColorHint="@color/gray_901"/>
+            android:textColorHint="@color/gray_901" />
+
     </LinearLayout>
+
+
+
 
 </LinearLayout>
 
