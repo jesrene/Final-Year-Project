@@ -1,6 +1,8 @@
 package com.jesrenesapplication.app;
 
 public class QuestionAnswer {
+
+    // Array of questions
     public static String question[]= {
             "Food that contains sugar and starch. Most of your energy comes from this kind of food. Foods with natural sugar or starch in them are the best source of this kind of food.",
             "Which food group should you eat the most of?",
@@ -15,6 +17,7 @@ public class QuestionAnswer {
 
     };
 
+    // Array of choices for each question
     public static String choices [][]= {
             {"Cookies", "Starches", "Carbohydrates", "Vitamins"},
             {"Dairy", "Vegetables", "Meats", "Grains", "Fats, Oils, and Sweets"},
@@ -28,6 +31,7 @@ public class QuestionAnswer {
             {"Increase Appetite", "Rapid Heartbeat", "Dry Skin", "Improved Sleep Quality"}
     };
 
+    // Array of correct answers
     public static String correctAnswers[]= {
             "Carbohydrates",
             "Grains",

@@ -3,16 +3,13 @@ package com.jesrenesapplication.app;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GetStartedScreen extends AppCompatActivity {
-
-    private static final String TAG = "GetStartedScreen";
-
+    // Declare variables
     Button getStarted;
     private MediaPlayer mediaPlayer;
 
@@ -21,9 +18,11 @@ public class GetStartedScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen1_get_started);
 
+        // Initialize views and media player
         getStarted = findViewById(R.id.btnGetStarted);
-        mediaPlayer = MediaPlayer.create(this, R.raw.zapsplat_technology_computer_mouse_single_click_001_63274);
+        mediaPlayer = MediaPlayer.create(this, R.raw.click);
 
+        // Set onClickListener for the "Get Started" button
         getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,27 +33,10 @@ public class GetStartedScreen extends AppCompatActivity {
         });
     }
 
+    // Method to play sound
     private void playSound() {
         if (mediaPlayer != null) {
-            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mp) {
-                    Log.d(TAG, "Sound completed playing");
-                }
-            });
-
-            mediaPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
-                @Override
-                public boolean onError(MediaPlayer mp, int what, int extra) {
-                    Log.e(TAG, "Error occurred while playing sound. Error code: " + what);
-                    return false;
-                }
-            });
-
             mediaPlayer.start();
-        } else {
-            Log.e(TAG, "MediaPlayer is null");
         }
     }
-
 }

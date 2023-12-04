@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
+
 <dimen name="_1pxh">1.0dp</dimen>
 <dimen name="_2pxh">2.0dp</dimen>
 <dimen name="_3pxh">3.0dp</dimen>
@@ -2872,4 +2873,5 @@
 <dimen name="_882sp">882.0sp</dimen>
 <dimen name="_883sp">883.0sp</dimen>
 <dimen name="_884sp">884.0sp</dimen>
+
 </resources>

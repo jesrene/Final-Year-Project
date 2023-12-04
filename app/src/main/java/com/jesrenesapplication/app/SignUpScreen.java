@@ -1,5 +1,7 @@
 package com.jesrenesapplication.app;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -7,9 +9,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,10 +26,8 @@ import com.squareup.picasso.Picasso;
 
 public class SignUpScreen extends AppCompatActivity {
 
-    Button signUp;
-    Button logIn;
+    // Declare variables
     ImageView imageProfilePicture;
-
     LinearLayout signInWithGoogleButton;
     private GoogleSignInClient mGoogleSignInClient;
     private MediaPlayer mediaPlayer;
@@ -37,19 +37,21 @@ public class SignUpScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen2_sign_in);
 
+        // Initialize views and media player
         signInWithGoogleButton = findViewById(R.id.btnSignInGoogle);
-        mediaPlayer = MediaPlayer.create(this, R.raw.zapsplat_technology_computer_mouse_single_click_001_63274);
+        mediaPlayer = MediaPlayer.create(this, R.raw.click);
 
-        // Configure sign-in to request the user's ID, email address, and basic profile
+        // Configure Google sign-in options
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .requestProfile()
                 .build();
 
-        // Build a GoogleSignInClient with the options specified by gso
+        // Create a GoogleSignInClient with the specified options
         mGoogleSignInClient = GoogleSignIn.getClient(this, options);
 
-            signInWithGoogleButton.setOnClickListener(new View.OnClickListener() {
+        // Set onClickListener for the "Sign In with Google" button
+        signInWithGoogleButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     playSound();
@@ -57,10 +59,10 @@ public class SignUpScreen extends AppCompatActivity {
                     loadGoogleProfilePicture();
                 }
             });
-
         }
+
+    // Retrieve the GoogleSignInAccount
     private void loadGoogleProfilePicture() {
-        // Retrieve the GoogleSignInAccount (you should have this from the sign-in process)
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
         // Get the user's profile picture Uri
@@ -68,14 +70,14 @@ public class SignUpScreen extends AppCompatActivity {
             Uri photoUri = account.getPhotoUrl();
 
             if (photoUri != null) {
-                // Use Picasso (or another image loading library) to load and display the image
                 Picasso.get().load(photoUri).into(imageProfilePicture);
                 Log.d("ProfileImageDebug", "Loaded profile image: " + photoUri.toString());
             }
         }
     }
+
+    // Sign out the current user before signing in with Google
     private void signOutAndSignInWithGoogle() {
-        // Sign out the current user before signing in with Google
         mGoogleSignInClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(Task<Void> task) {
@@ -84,13 +86,12 @@ public class SignUpScreen extends AppCompatActivity {
                     Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                     startActivityForResult(signInIntent, RC_SIGN_IN);
                 } else {
-                    // Handle sign-out error
-                    // You can display an error message or handle the error as needed
+                    Toast.makeText(SignUpScreen.this, "Sign-out failed. Please try again.", Toast.LENGTH_SHORT).show();
+                    Log.e(TAG, "Sign-out failed: " + task.getException());
                 }
             }
         });
     }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -98,18 +99,16 @@ public class SignUpScreen extends AppCompatActivity {
 
         // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
         }
     }
 
-    private static final int RC_SIGN_IN = 123; // Replace with your request code
+    private static final int RC_SIGN_IN = 123;
 
     // After a successful Google Sign-In, save the user's data
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
             if (account != null) {
                 String email = account.getEmail();
                 String userName = account.getDisplayName();
@@ -119,38 +118,21 @@ public class SignUpScreen extends AppCompatActivity {
                 // Save the user data in SharedPreferences
                 saveUserData(email, userName, personId, photoUri);
 
-                Log.d("Sign Up Screen", "User Email: " + email);
-                Log.d("Sign Up Screen", "User name: " + userName);
-                Log.d("Sign Up Screen", "id: " + personId);
-
             } else {
-                Log.e("Sign Up Screen", "GoogleSignInAccount is null.");
+                Toast.makeText(this, "Sign-in failed. Please try again.", Toast.LENGTH_SHORT).show();
             }
 
-            // Create an intent to navigate to the NavBar activity
-            Intent intent = new Intent(this, NavBar.class);
+        Intent intent = new Intent(this, NavBar.class);
+        intent.putExtra("googleSignInAccount", account); // Pass the GoogleSignInAccount as an extra to the HomeFragment
+        startActivity(intent);
+    }
 
-            // Pass the GoogleSignInAccount as an extra to the HomeFragment
-            intent.putExtra("googleSignInAccount", account);
-
-            //todo
-            EditProfile editProfileFragment = new EditProfile();
-//            Bundle args = new Bundle();
-//            args.putString("userEmail", email);
-//            args.putString("userName", userName);
-//            editProfileFragment.setArguments(args);
-
-            // Start the NavBar activity
-            startActivity(intent);
-
-        }
-
+    // Method to play sound
     private void playSound() {
         if (mediaPlayer != null) {
             mediaPlayer.start();
         }
     }
-
 
     // Define the updateUI method
     private void saveUserData(String userEmail, String userName, String personId, Uri photoUri) {

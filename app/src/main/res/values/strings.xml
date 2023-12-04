@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
 <resources>
+
     <string name="app_name">Fleez</string>
     <string name="lbl_energy">Energy</string>
     <string name="lbl_height">HEIGHT</string>
@@ -52,4 +54,5 @@
     <string name="lbl_1_2">1/2</string>
     <string name="lbl_sign_in2">Sign In</string>
     <string name="playGame">Play\nGame</string>
+
 </resources>

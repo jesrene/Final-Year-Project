@@ -1,6 +1,5 @@
 package com.jesrenesapplication.app;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,13 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.squareup.picasso.Picasso;
-
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 public class QuizScreen extends Fragment {
@@ -36,15 +32,12 @@ public class QuizScreen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.screen6_information_snippet, container, false);
 
-        // Find the btnImReady button by its ID within the fragment_quiz_screen.xml layout
+        // Initialize views
         imReady = view.findViewById(R.id.btnImReady);
         imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
-        mediaPlayer = MediaPlayer.create(requireContext(), R.raw.zapsplat_technology_computer_mouse_single_click_001_63274);
+        mediaPlayer = MediaPlayer.create(requireContext(), R.raw.click);
 
-
-
-
-        // Set an OnClickListener to handle button clicks
+        // Handle click event for "Im Ready" button
         imReady.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,65 +50,55 @@ public class QuizScreen extends Fragment {
         });
 
         imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
-
-
-        // Find the backToRewards button by its ID within the fragment_quiz_screen.xml layout
         backButton = view.findViewById(R.id.backToRewards);
 
-        // Set an OnClickListener to handle button clicks
+        // Handle click event for back button to navigate to RewardsFragment
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Create an instance of the fragment you want to navigate to
-                RewardsFragment rewardsFragment = new RewardsFragment();
-
-                // Get the FragmentManager
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-
-                // Start a FragmentTransaction
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-                // Replace the current fragment with the new one
-                transaction.replace(R.id.container, rewardsFragment);
-
-                // Add the transaction to the back stack (optional)
-                transaction.addToBackStack(null);
-
-                // Commit the transaction
-                transaction.commit();
-
+                navigateToRewardsFragment();
             }
         });
+
         loadUserProfilePicture();
         return view;
     }
 
-
+    // Method to play sound
     private void playSound() {
         if (mediaPlayer != null) {
             mediaPlayer.start();
         }
     }
 
-
+    // Load user's profile picture
     private void loadUserProfilePicture() {
         // Retrieve the user's profile picture URL from SharedPreferences
         SharedPreferences preferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
         String         profilePic = preferences.getString("userPhotoUrl", "");
 
-        // Initialize Picasso (if not already initialized)
         if (picasso == null) {
             picasso = new Picasso.Builder(requireContext()).build();
         }
-
         if (!profilePic.isEmpty()) {
             Uri photoUri = Uri.parse(profilePic);
             picasso.load(photoUri)
-                    .transform(new CropCircleTransformation()) // Apply circular transformation
+                    .transform(new CropCircleTransformation())
                     .into(imageProfilePicture);
         } else {
             // If profilePic URL is empty, set a default image
-            imageProfilePicture.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
+            imageProfilePicture.setImageResource(R.drawable.img_profilepic);
         }
     }
+
+    // Navigate to RewardsFragment
+    private void navigateToRewardsFragment() {
+        RewardsFragment rewardsFragment = new RewardsFragment();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.container, rewardsFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }
+

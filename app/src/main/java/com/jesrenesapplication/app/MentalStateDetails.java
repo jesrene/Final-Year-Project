@@ -29,8 +29,6 @@ public class MentalStateDetails extends Fragment {
     private Picasso picasso;
     ImageView imageProfilePicture;
 
-    TextView mentalStateTextView; // assuming you have a TextView in your layout
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.screen4_mental_state_details, container, false);
@@ -97,24 +95,23 @@ public class MentalStateDetails extends Fragment {
         return view;
     }
 
+    // Load user's profile picture
     private void loadUserProfilePicture() {
         // Retrieve the user's profile picture URL from SharedPreferences
         SharedPreferences preferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
-        String profilePic = preferences.getString("userPhotoUrl", "");
+        String         profilePic = preferences.getString("userPhotoUrl", "");
 
-        // Initialize Picasso (if not already initialized)
         if (picasso == null) {
             picasso = new Picasso.Builder(requireContext()).build();
         }
-
         if (!profilePic.isEmpty()) {
             Uri photoUri = Uri.parse(profilePic);
             picasso.load(photoUri)
-                    .transform(new CropCircleTransformation()) // Apply circular transformation
+                    .transform(new CropCircleTransformation())
                     .into(imageProfilePicture);
         } else {
             // If profilePic URL is empty, set a default image
-            imageProfilePicture.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
+            imageProfilePicture.setImageResource(R.drawable.img_profilepic);
         }
     }
 }

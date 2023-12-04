@@ -14,11 +14,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,18 +25,19 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.squareup.picasso.Picasso;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 public class HomeFragment extends Fragment {
+
+    // Declare variables
     private EditText heartRateInput;
     private Button predictButton;
     private TextView mentalStateText;
     private Picasso picasso;
 
+    // Method to set user details (name, profile picture)
     private void setUserDetails(View view) {
         // Retrieve the user's email and profile picture URL from SharedPreferences
         SharedPreferences preferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
@@ -48,10 +47,11 @@ public class HomeFragment extends Fragment {
         String name = preferences.getString("userName", "");
         Log.d("profile", "User Name: " + name);
 
+        // Set user's name in TextView
         TextView nameTextView = view.findViewById(R.id.txtName);
         nameTextView.setText(name);
 
-        // Retrieve the GoogleSignInAccount from the intent
+        // Get the GoogleSignInAccount from the intent and display profile picture using Picasso
         GoogleSignInAccount account = getActivity().getIntent().getParcelableExtra("googleSignInAccount");
 
         ImageView imageProfilePicture = view.findViewById(R.id.imageProfilePicture);
@@ -59,12 +59,9 @@ public class HomeFragment extends Fragment {
         if (account != null) {
             // Get the user's profile picture Uri
             Uri photoUri = account.getPhotoUrl();
-
-            // Initialize Picasso (if not already initialized)
             if (picasso == null) {
                 picasso = new Picasso.Builder(requireContext()).build();
             }
-
             if (photoUri != null) {
                 picasso.load(photoUri)
                         .transform(new CropCircleTransformation()) // Apply circular transformation
@@ -74,17 +71,11 @@ public class HomeFragment extends Fragment {
                 // If photoUri is null, set a default image
                 imageProfilePicture.setImageResource(R.drawable.img_profilepic); // Replace with your default image resource
             }
-        } else {
-            // Handle the case where GoogleSignInAccount is null
-            // You may want to display an error or take appropriate action.
         }
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.screen3_home, container, false);
 
         setUserDetails(view);
@@ -92,46 +83,41 @@ public class HomeFragment extends Fragment {
         heartRateInput = view.findViewById(R.id.heartRateTextView);
         predictButton = view.findViewById(R.id.button);
         mentalStateText = view.findViewById(R.id.textMentalState);
-        // Find the LinearLayout for the mental state
         LinearLayout mentalStateLayout = view.findViewById(R.id.mentalStateDetails);
 
-        // Set an OnClickListener to navigate to MentalStateDetails fragment
+        // Set OnClickListener to navigate to MentalStateDetails fragment
         mentalStateLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Prepare data to pass to MentalStateDetails fragment
                 MentalStateDetails mentalStateDetails = new MentalStateDetails();
-
-                // Pass stress information to MentalStateDetails
                 Bundle args = new Bundle();
                 args.putBoolean("isStressed", mentalStateText.getText().toString().equals("In Stress"));
+
+                // Replace current fragment with MentalStateDetails
                 mentalStateDetails.setArguments(args);
-
-                // Get the FragmentManager
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-
-                // Start a FragmentTransaction
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-                // Replace the current fragment with the new one
                 transaction.replace(R.id.container, mentalStateDetails);
-
-                // Add the transaction to the back stack (optional)
                 transaction.addToBackStack(null);
-
-                // Commit the transaction
                 transaction.commit();
             }
         });
 
+        // Set OnClickListener for predictButton
         predictButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://jesrenecheoy.pythonanywhere.com/?hr=" + heartRateInput.getText(); //todo
+
+                // Prepare URL for prediction based on heart rate input
+                String url = "https://jesrenecheoy.pythonanywhere.com/?hr=" + heartRateInput.getText();
                 RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
 
+                // Create a JsonObjectRequest to get a prediction
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                         (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
+                            // Handle the response and update UI with the prediction result
                             @Override
                             public void onResponse(JSONObject response) {
                                 try {
@@ -146,7 +132,6 @@ public class HomeFragment extends Fragment {
                                         mentalStateText.setText("In Stress");
                                         mentalStateText.setTextColor(Color.RED);
                                     } else {
-                                        // Handle other prediction values if needed
                                         mentalStateText.setText("Unknown prediction: " + prediction);
                                     }
 
@@ -154,6 +139,8 @@ public class HomeFragment extends Fragment {
                                     e.printStackTrace();
                                 }
                             }
+
+                         // Error handling
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
@@ -162,12 +149,10 @@ public class HomeFragment extends Fragment {
                                 mentalStateText.setTextColor(Color.RED);
                             }
                         });
-                // Add the request to the RequestQueue
-                // Assuming you have a RequestQueue object named 'requestQueue'
+
                 requestQueue.add(jsonObjectRequest);
             }
         });
-
         return view;
     }
 }
